@@ -11,11 +11,20 @@ const Process = () => {
     target: sectionRef,
     offset: ["start end", "end start"]
   });
+
+//   gsap.timeline({
+//   scrollTrigger: {
+//     scrub: 1,
+//     trigger: ".scroll-trigger-ready__worm-wrap",
+//     start: "top 90%",
+//     end: "bottom 30%",
+//   },
+// });
   
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   
   const boxVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0.5, y: 50 },
     visible: { 
       opacity: 1, 
       y: 0,
@@ -38,17 +47,28 @@ const Process = () => {
     const steps = gsap.utils.toArray('.process-step');
     
     steps.forEach((step, i) => {
-      gsap.from(step, {
+      const timeline = gsap.timeline({
         scrollTrigger: {
+          scrub: 1,
           trigger: step,
-          start: "top bottom-=100",
-          toggleActions: "play none none none"
-        },
-        x: i % 2 === 0 ? -50 : 50,
-        opacity: 0,
-        duration: 0.6,
-        delay: i * 0.2
+          start: "top 90%",
+          end: "bottom 30%",
+        }
       });
+
+      timeline.fromTo(step, 
+        {
+          opacity: 0,
+          y: 50,
+          x: i % 2 === 0 ? -50 : 50
+        },
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          duration: 1
+        }
+      );
     });
     
     return () => {
@@ -111,22 +131,31 @@ const Process = () => {
     <section 
       ref={sectionRef} 
       id="process" 
-      className="py-20 bg-gradient-to-b from-[#1a1f36] to-primary relative overflow-hidden"
+      className="py-12 bg-gradient-to-b from-[#1a1f36] to-primary relative overflow-hidden"
     >
-      {/* Animated background elements */}
+      {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
           style={{ opacity }}
-          className="absolute top-1/4 right-[10%] w-64 h-64 bg-accent-1/10 rounded-full blur-[100px]"
+          className="absolute top-0 right-0 w-full h-full bg-[url('/grid.svg')] bg-repeat opacity-5"
         />
         <motion.div 
           style={{ opacity }}
-          className="absolute bottom-1/4 left-[10%] w-80 h-80 bg-accent-2/10 rounded-full blur-[120px]"
+          className="absolute top-1/4 right-[10%] w-96 h-96 bg-accent-1/10 rounded-full blur-[120px]"
         />
         <motion.div 
           style={{ opacity }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-secondary/10 rounded-full blur-[150px]"
+          className="absolute bottom-1/4 left-[10%] w-96 h-96 bg-accent-2/10 rounded-full blur-[120px]"
         />
+        <motion.div 
+          style={{ opacity }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-96 bg-secondary/10 rounded-full blur-[150px]"
+        />
+        {/* Additional decorative elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-1 to-transparent" />
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-2 to-transparent" />
+        </div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -138,7 +167,7 @@ const Process = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-hero">
-            Our <span className="text-gradient-accent">Projects</span>
+            Our <span className="text-gradient-accent">Process</span>
           </h2>
           </motion.div>
           
@@ -165,32 +194,32 @@ const Process = () => {
         
         <div className="relative">
           {/* Timeline center line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white/10 rounded-full md:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-white/10 rounded-full md:block"></div>
           
-          <div className="space-y-8 md:space-y-12 relative z-10 text-white">
+          <div className="space-y-6 md:space-y-8 relative z-10 text-white max-w-6xl mx-auto">
             {steps.map((step, index) => (
               <motion.div 
                 key={step.id}
-                className="process-step md:grid md:grid-cols-2 md:gap-12 items-center relative"
+                className="process-step md:grid md:grid-cols-2 md:gap-8 items-center relative"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-50px" }}
               >
                 {/* Step number circle for desktop */}
                 <motion.div 
-                  className="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-accent-1 rounded-full items-center justify-center text-white font-bold z-10 md:flex hidden"
+                  className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-accent-1 rounded-full items-center justify-center text-white font-bold z-10 md:flex hidden"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                 >
-                  .
+                  
                 </motion.div>
                 
                 {/* Content positioning based on even/odd */}
                 <motion.div 
                   className={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'} 
-                    bg-dark/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-white/10 relative
-                    max-w-md mx-auto w-full`}
+                    group bg-dark/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-white/10 relative
+                    max-w-xl mx-auto w-full hover:bg-dark/60 transition-all duration-300`}
                   variants={boxVariants}
                   whileHover="hover"
                 >
@@ -227,7 +256,7 @@ const Process = () => {
 
                   {/* Connecting line with animation */}
                   <motion.div 
-                    className={`absolute top-1/2 w-1/4 h-0.5 bg-gradient-to-r from-accent-1/50 to-transparent
+                    className={`absolute top-1/2 w-[60px] h-[2px] bg-white/10
                       ${index % 2 === 0 ? 'right-0 translate-x-full' : 'left-0 -translate-x-full'}`}
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
