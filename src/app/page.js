@@ -11,6 +11,7 @@ import ProjectsSimple from "@/components/sections/ProjectsSimple";
 import ContactSimple from "@/components/sections/ContactSimple";
 import Testimonials from '@/components/sections/Testimonials';
 import TeamPage from './team/page';
+import SimpleTeamTest from "@/components/sections/SimpleTeamTest";
 import Process from '@/components/sections/Process';
 import FAQSection from '@/components/sections/FAQSection';
 import EnhancedNavbar from '@/components/layout/EnhancedNavbar';
@@ -207,7 +208,7 @@ export default function Home() {
         <ServicesSimple />
         <ProjectsSimple />
         <Process/>
-        <TeamPage/>
+        <SimpleTeamTest/>
         <FAQSection />
         <ContactSimple />
       </main>

@@ -1,6 +1,6 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
@@ -13,6 +13,17 @@ if (typeof window !== 'undefined') {
 const RefinedTeamSection = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  // Mouse tracking for magnetic effects
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   // Team member data
   const teamMembers = [
@@ -303,71 +314,196 @@ const RefinedTeamSection = () => {
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="team-card bg-gradient-to-br from-slate-900/90 to-slate-800/80 backdrop-blur-lg rounded-xl overflow-hidden border border-white/10 shadow-2xl"
+              className="team-card group relative bg-gradient-to-br from-slate-900/90 to-slate-800/80 backdrop-blur-lg rounded-xl overflow-hidden border border-white/10 shadow-2xl"
               ref={el => cardsRef.current[index] = el}
               data-speed={1 + (index * 0.05)}
+              initial={{ opacity: 0, y: 50, rotateX: 10 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.8, type: "spring" }}
               whileHover={{ 
-                y: -15, 
-                boxShadow: "0 30px 60px rgba(59, 130, 246, 0.3)",
-                borderColor: "rgba(139, 92, 246, 0.5)"
-              }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 300,
-                damping: 20 
+                y: -20, 
+                rotateY: 5,
+                scale: 1.02,
+                boxShadow: "0 40px 80px rgba(59, 130, 246, 0.4)",
+                borderColor: "rgba(139, 92, 246, 0.7)"
               }}
             >
+              {/* Animated border gradient */}
+              <div className="absolute inset-0 rounded-xl p-[1px] bg-gradient-to-r from-purple-500/50 via-blue-500/50 to-purple-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="w-full h-full rounded-xl bg-gradient-to-br from-slate-900/95 to-slate-800/95"></div>
+              </div>
+
+              {/* Floating particles effect */}
+              <div className="absolute inset-0 overflow-hidden rounded-xl">
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-1 h-1 bg-purple-400/60 rounded-full"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                    }}
+                    animate={{
+                      y: [-20, -40, -20],
+                      x: [-10, 10, -10],
+                      opacity: [0, 1, 0],
+                      scale: [0.5, 1, 0.5],
+                    }}
+                    transition={{
+                      duration: 3 + Math.random() * 2,
+                      repeat: Infinity,
+                      delay: Math.random() * 2,
+                      ease: "easeInOut"
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Morphing background blob */}
+              <div className="absolute inset-0 overflow-hidden rounded-xl">
+                <motion.div 
+                  className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full filter blur-3xl"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    rotate: [0, 180, 360],
+                    x: [-10, 10, -10],
+                    y: [-10, 10, -10],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.div 
+                  className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full filter blur-3xl"
+                  animate={{
+                    scale: [1.2, 1, 1.2],
+                    rotate: [360, 180, 0],
+                    x: [10, -10, 10],
+                    y: [10, -10, 10],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </div>
+
               <div className="relative h-72 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-blue-500/30 mix-blend-overlay z-10" />
                 
-                {/* Team member image */}
-                <Image 
-                  src={member.image} 
-                  alt={member.name} 
-                  width={600}
-                  height={600}
-                  className="object-cover w-full h-full transition-transform duration-700 ease-out team-image"
-                />
+                {/* Team member image with parallax effect */}
+                <motion.div
+                  className="w-full h-full"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                  <Image 
+                    src={member.image} 
+                    alt={member.name} 
+                    width={600}
+                    height={600}
+                    className="object-cover w-full h-full transition-all duration-700 ease-out team-image group-hover:brightness-110"
+                  />
+                </motion.div>
                 
-                {/* Decorative glow effects */}
-                <div className="absolute top-0 left-0 w-full h-full z-0">
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full filter blur-3xl"></div>
-                  <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/20 rounded-full filter blur-3xl"></div>
+                {/* Dynamic overlay patterns */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.3) 0%, transparent 50%), 
+                                     radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)`
+                  }} />
                 </div>
                 
                 {/* Overlay gradient for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent z-20"></div>
                 
-                {/* Role badge floating at the top */}
-                <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full z-30">
+                {/* Animated role badge */}
+                <motion.div 
+                  className="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full z-30"
+                  whileHover={{ scale: 1.1, backgroundColor: "rgba(139, 92, 246, 0.3)" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
                   <p className="text-sm font-medium text-white">{member.role}</p>
+                </motion.div>
+
+                {/* Skill level indicator */}
+                <div className="absolute bottom-4 left-4 z-30">
+                  <div className="flex space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
+                        initial={{ scale: 0.5, opacity: 0.5 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: i * 0.1 + index * 0.3, duration: 0.3 }}
+                        whileHover={{ scale: 1.3 }}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div className="card-content p-6 relative z-30">
+              <motion.div 
+                className="card-content p-6 relative z-30"
+                whileHover={{ y: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 {/* Animated background glow on hover */}
-                <div className="card-bg-highlight absolute top-0 right-0 w-56 h-56 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-3xl -mt-16 -mr-16 pointer-events-none opacity-0" />
+                <motion.div 
+                  className="card-bg-highlight absolute top-0 right-0 w-56 h-56 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-3xl -mt-16 -mr-16 pointer-events-none"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileHover={{ opacity: 1, scale: 1.2 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                />
                 
-                {/* Member Info */}
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent mb-2">{member.name}</h3>
+                {/* Member Info with typing animation effect */}
+                <motion.h3 
+                  className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent mb-2"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  {member.name}
+                </motion.h3>
                 
-                <p className="text-white/80 mb-4">{member.bio}</p>
+                <motion.p 
+                  className="text-white/80 mb-4 leading-relaxed"
+                  initial={{ opacity: 0.8 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {member.bio}
+                </motion.p>
                 
-                {/* Skills tags */}
+                {/* Skills tags with staggered animation */}
                 <div className="flex flex-wrap gap-2 mb-5">
-                  {member.skills && member.skills.map(skill => (
-                    <span 
+                  {member.skills && member.skills.map((skill, skillIndex) => (
+                    <motion.span 
                       key={skill} 
-                      className="px-2.5 py-1 bg-white/5 text-purple-200/80 text-xs rounded-full border border-purple-500/20"
+                      className="px-3 py-1 bg-white/5 text-purple-200/80 text-xs rounded-full border border-purple-500/20 relative overflow-hidden"
+                      whileHover={{ 
+                        scale: 1.1, 
+                        backgroundColor: "rgba(139, 92, 246, 0.2)",
+                        borderColor: "rgba(139, 92, 246, 0.5)"
+                      }}
+                      transition={{ type: "spring", stiffness: 400, delay: skillIndex * 0.1 }}
                     >
-                      {skill}
-                    </span>
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: "100%" }}
+                        transition={{ duration: 0.5 }}
+                      />
+                      <span className="relative z-10">{skill}</span>
+                    </motion.span>
                   ))}
                 </div>
                 
-                {/* Social Links */}
+                {/* Social Links with advanced hover effects */}
                 <div className="flex justify-start mt-auto pt-4 border-t border-white/10">
-                  {Object.entries(member.social).map(([platform, url]) => {
+                  {Object.entries(member.social).map(([platform, url], socialIndex) => {
                     if (!url) return null;
                     return (
                       <motion.a 
@@ -375,41 +511,73 @@ const RefinedTeamSection = () => {
                         href={url} 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="social-icon mr-4 w-8 h-8 rounded-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center"
+                        className="social-icon mr-4 w-10 h-10 rounded-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center relative overflow-hidden"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{ delay: socialIndex * 0.1, type: "spring", stiffness: 300 }}
                         whileHover={{ 
-                          scale: 1.2, 
-                          backgroundColor: platform === 'twitter' ? 'rgba(29, 161, 242, 0.3)' : 
-                                          platform === 'linkedin' ? 'rgba(10, 102, 194, 0.3)' : 
-                                          platform === 'github' ? 'rgba(110, 84, 148, 0.3)' : 
-                                          platform === 'dribbble' ? 'rgba(234, 76, 137, 0.3)' : 'rgba(255, 255, 255, 0.1)'
+                          scale: 1.3, 
+                          rotate: 360,
+                          backgroundColor: platform === 'twitter' ? 'rgba(29, 161, 242, 0.4)' : 
+                                          platform === 'linkedin' ? 'rgba(10, 102, 194, 0.4)' : 
+                                          platform === 'github' ? 'rgba(110, 84, 148, 0.4)' : 
+                                          platform === 'dribbble' ? 'rgba(234, 76, 137, 0.4)' : 'rgba(255, 255, 255, 0.2)'
                         }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        whileTap={{ scale: 0.9 }}
                       >
+                        {/* Ripple effect */}
+                        <motion.div
+                          className="absolute inset-0 rounded-full bg-white/20"
+                          initial={{ scale: 0, opacity: 1 }}
+                          whileHover={{ scale: 2, opacity: 0 }}
+                          transition={{ duration: 0.6 }}
+                        />
+                        
                         {platform === 'twitter' && (
-                          <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                          <motion.svg 
+                            className="w-5 h-5 text-blue-400 relative z-10" 
+                            fill="currentColor" 
+                            viewBox="0 0 24 24"
+                            whileHover={{ rotate: 15 }}
+                          >
                             <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                          </svg>
+                          </motion.svg>
                         )}
                         {platform === 'linkedin' && (
-                          <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                          <motion.svg 
+                            className="w-5 h-5 text-blue-600 relative z-10" 
+                            fill="currentColor" 
+                            viewBox="0 0 24 24"
+                            whileHover={{ rotate: 15 }}
+                          >
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
+                          </motion.svg>
                         )}
                         {platform === 'github' && (
-                          <svg className="w-4 h-4 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                          <motion.svg 
+                            className="w-5 h-5 text-purple-300 relative z-10" 
+                            fill="currentColor" 
+                            viewBox="0 0 24 24"
+                            whileHover={{ rotate: 15 }}
+                          >
                             <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                          </svg>
+                          </motion.svg>
                         )}
                         {platform === 'dribbble' && (
-                          <svg className="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                          <motion.svg 
+                            className="w-5 h-5 text-pink-400 relative z-10" 
+                            fill="currentColor" 
+                            viewBox="0 0 24 24"
+                            whileHover={{ rotate: 15 }}
+                          >
                             <path fillRule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clipRule="evenodd" />
-                          </svg>
+                          </motion.svg>
                         )}
                       </motion.a>
                     );
                   })}
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
