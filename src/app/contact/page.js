@@ -319,7 +319,7 @@ const ContactPage = () => {
                     </svg>
                     <div>
                       <h4 className="text-green-400 font-medium">Message Sent Successfully!</h4>
-                      <p className="text-green-300/80 text-sm">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                      <p className="text-green-300/80 text-sm">Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
                     </div>
                   </motion.div>
                 )}
