@@ -70,7 +70,7 @@ const ContactPage = () => {
     'Rs.10,000 - 25,000',
     'Rs.25,000 - 50,000',
     'Rs.50,000+',
-    'Let\'s discuss'
+    'Let&apos;s discuss'
   ];
 
   return (
