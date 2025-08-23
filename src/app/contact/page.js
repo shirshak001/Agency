@@ -15,6 +15,7 @@ const ContactPage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
 
   const handleChange = (e) => {
     setFormData({
@@ -26,10 +27,18 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (res.ok) {
+      setSubmitStatus('success');
       setFormData({
         name: '',
         email: '',
@@ -39,28 +48,28 @@ const ContactPage = () => {
         budget: '',
         message: ''
       });
-      setIsSubmitting(false);
-    }, 2000);
+    } else {
+      setSubmitStatus('error');
+    }
+    setIsSubmitting(false);
   };
 
   const services = [
     'UI/UX Design',
     'Web Development',
-    'Branding',
     'Mobile App Development',
     'E-commerce',
     'Machine Learning',
     'Video Production',
-    'Digital Marketing',
     'Other'
   ];
 
   const budgetRanges = [
-    'Under $5,000',
-    '$5,000 - $10,000',
-    '$10,000 - $25,000',
-    '$25,000 - $50,000',
-    '$50,000+',
+    'Under Rs.5,000',
+    'Rs.5,000 - 10,000',
+    'Rs.10,000 - 25,000',
+    'Rs.25,000 - 50,000',
+    'Rs.50,000+',
     'Let\'s discuss'
   ];
 
@@ -294,6 +303,41 @@ const ContactPage = () => {
                     placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
                   />
                 </div>
+
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <motion.div
+                    className="flex items-center space-x-3 p-4 bg-green-500/20 border border-green-500/30 rounded-lg"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                      <h4 className="text-green-400 font-medium">Message Sent Successfully!</h4>
+                      <p className="text-green-300/80 text-sm">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    </div>
+                  </motion.div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <motion.div
+                    className="flex items-center space-x-3 p-4 bg-red-500/20 border border-red-500/30 rounded-lg"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <svg className="w-6 h-6 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.867-.833-2.636 0L3.178 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                    <div>
+                      <h4 className="text-red-400 font-medium">Something went wrong</h4>
+                      <p className="text-red-300/80 text-sm">Please try again later or contact us directly.</p>
+                    </div>
+                  </motion.div>
+                )}
 
                 <motion.button
                   type="submit"

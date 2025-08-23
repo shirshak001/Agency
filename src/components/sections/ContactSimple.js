@@ -1,7 +1,15 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import Icon from '../ui/Icon';
+import { 
+  FaTwitter, 
+  FaLinkedin, 
+  FaInstagram, 
+  FaEnvelope, 
+  FaPhone, 
+  FaMapMarkerAlt, 
+  FaFacebook 
+} from 'react-icons/fa';
 
 const ContactSimple = () => {
   const [isClient, setIsClient] = useState(false);
@@ -10,6 +18,7 @@ const ContactSimple = () => {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState(null); // success / error message
 
   useEffect(() => {
     setIsClient(true);
@@ -19,12 +28,29 @@ const ContactSimple = () => {
     return <div className="h-96 bg-gray-900"></div>;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   const handleChange = (e) => {
@@ -123,9 +149,17 @@ const ContactSimple = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full px-8 py-4 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all duration-300"
+                  disabled={status === "loading"}
                 >
-                  Send Message
+                  {status === "loading" ? "Sending..." : "Send Message"}
                 </motion.button>
+
+                {status === "success" && (
+                  <p className="text-green-400 mt-4">Message sent successfully!</p>
+                )}
+                {status === "error" && (
+                  <p className="text-red-400 mt-4">Something went wrong. Try again.</p>
+                )}
               </form>
             </div>
           </motion.div>
@@ -145,22 +179,22 @@ const ContactSimple = () => {
               <div className="space-y-6">
                 {[
                   {
-                    icon: 'mail',
+                    icon: <FaEnvelope className="w-6 h-6 text-accent-1" />,
                     title: 'Email',
                     info: 'hello@creativesync.com',
                     description: 'Send us an email anytime'
                   },
                   {
-                    icon: 'phone',
+                    icon: <FaPhone className="w-6 h-6 text-accent-1" />,
                     title: 'Phone',
-                    info: '+1 (555) 123-4567',
+                    info: '+91 8791167321, 8617300719, 9015195801',
                     description: 'Mon-Fri from 8am to 6pm'
                   },
                   {
-                    icon: 'location',
+                    icon: <FaMapMarkerAlt className="w-6 h-6 text-accent-1" />,
                     title: 'Office',
-                    info: 'San Francisco, CA',
-                    description: 'Visit us in person'
+                    info: 'NIT Hamirpur, H.P, India',
+                    description: 'Call us or email to schedule a meeting'
                   }
                 ].map((contact, index) => (
                   <motion.div
@@ -169,9 +203,7 @@ const ContactSimple = () => {
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-2xl">
-                      <Icon name={contact.icon} className="w-6 h-6 text-accent-1" />
-                    </div>
+                    <div className="text-2xl">{contact.icon}</div>
                     <div>
                       <h4 className="text-white font-semibold">{contact.title}</h4>
                       <p className="text-accent-2 font-medium">{contact.info}</p>
@@ -188,10 +220,10 @@ const ContactSimple = () => {
               
               <div className="flex space-x-4">
                 {[
-                  { name: 'Twitter', icon: 'twitter' },
-                  { name: 'LinkedIn', icon: 'linkedin' },
-                  { name: 'Instagram', icon: 'instagram' },
-                  { name: 'Dribbble', icon: 'dribbble' }
+                  { name: 'LinkedIn', icon: <FaLinkedin className="w-6 h-6 text-white" /> },
+                  { name: 'Twitter', icon: <FaTwitter className="w-6 h-6 text-white" /> },
+                  { name: 'Facebook', icon: <FaFacebook className="w-6 h-6 text-white" /> },
+                  { name: 'Instagram', icon: <FaInstagram className="w-6 h-6 text-white" /> },
                 ].map((social, index) => (
                   <motion.button
                     key={index}
@@ -200,7 +232,7 @@ const ContactSimple = () => {
                     className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-xl hover:bg-accent-2 transition-colors duration-300"
                     title={social.name}
                   >
-                    <Icon name={social.icon} className="w-6 h-6 text-white" />
+                    {social.icon}
                   </motion.button>
                 ))}
               </div>

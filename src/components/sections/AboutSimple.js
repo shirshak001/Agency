@@ -21,7 +21,7 @@ const AboutSimple = () => {
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-blue-purple rounded-full opacity-20 blur-3xl animate-pulse" />
         <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-purple-blue rounded-full opacity-20 blur-3xl animate-pulse delay-1000" />
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -31,18 +31,18 @@ const AboutSimple = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-hero text-center">
-              About <span className="text-gradient-accent">CreativeSync</span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              About <span className="text-gradient">CreativeSync</span>
             </h2>
-            
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed text-center">
-              We are a passionate team of designers, developers, and strategists who believe 
-              in the power of exceptional digital experiences. Since our founding, we&apos;ve been 
+
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed text-center lg:text-left">
+              We are a passionate team of designers, developers, and strategists who believe
+              in the power of exceptional digital experiences. Since our founding, we&apos;ve been
               dedicated to helping businesses transform their online presence.
             </p>
-            
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed text-center">
-              Our approach combines creative innovation with technical expertise to deliver 
+
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed text-center lg:text-left">
+              Our approach combines creative innovation with technical expertise to deliver
               solutions that not only look stunning but also drive real business results.
             </p>
 
@@ -79,19 +79,19 @@ const AboutSimple = () => {
           >
             {/* Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent-1/20 to-accent-2/20 rounded-3xl blur-3xl"></div>
-            
+
             {/* Content */}
             <div className="relative bg-gray-800/30 backdrop-blur-sm rounded-3xl p-8 border border-purple-500/30 shadow-2xl">
               <h3 className="text-2xl font-bold mb-8 text-center text-gradient-accent">
                 Our Impact
               </h3>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: '150+', label: 'Projects Delivered', icon: 'rocket' },
-                  { value: '50+', label: 'Happy Clients', icon: 'users' },
-                  { value: '5+', label: 'Years Experience', icon: 'sparkles' },
-                  { value: '15+', label: 'Team Members', icon: 'briefcase' },
+                  { value: '22+', label: 'Projects Delivered', icon: 'rocket' },
+                  { value: '16+', label: 'Happy Clients', icon: 'users' },
+                  { value: '3+', label: 'Years Experience', icon: 'sparkles' },
+                  { value: '5+', label: 'Team Members', icon: 'briefcase' },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
@@ -114,12 +114,12 @@ const AboutSimple = () => {
                   </motion.div>
                 ))}
               </div>
-              
+
               {/* Mission Statement */}
               <div className="mt-8 p-6 bg-gradient-to-r from-accent-1/10 to-accent-2/10 rounded-xl border border-accent-2/20">
                 <h4 className="text-lg font-semibold text-white mb-3">Our Mission</h4>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  To empower businesses with innovative digital solutions that drive growth, 
+                  To empower businesses with innovative digital solutions that drive growth,
                   enhance user experiences, and create lasting impact in the digital landscape.
                 </p>
               </div>

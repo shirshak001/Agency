@@ -10,7 +10,7 @@ const SimpleTeamTest = () => {
       name: 'Shresth Maheshwari',
       role: 'Founder & CEO',
       bio: 'Visionary leader with 2+ years of experience.',
-      color: { primary: '#8B5CF6', secondary: '#3B82F6' },
+      color: { primary: '#8B5CF6', secondary: '#06B6D4' },
       // element: '🚀',
       image: '/team/shresth.jpeg', // ✅ Add image
     },
@@ -18,7 +18,7 @@ const SimpleTeamTest = () => {
       name: 'Shirshak Mondal',
       role: 'Creative Director',
       bio: 'Award-winning designer creating memorable experiences.',
-      color: { primary: '#EC4899', secondary: '#F59E0B' },
+      color: { primary: '#EC4899', secondary: '#8B5CF6' },
       // element: '🎨',
       image: '/team/shirshak.jpeg', // ✅ Add image
     },
@@ -26,7 +26,7 @@ const SimpleTeamTest = () => {
       name: 'Ayush Kumar',
       role: 'CTO',
       bio: 'Tech innovator specializing in emerging technologies.',
-      color: { primary: '#10B981', secondary: '#06B6D4' },
+      color: { primary: '#6366F1', secondary: '#EC4899' },
       // element: '💡',
       image: '/team/ayush.jpeg', // ✅ Add image
     },
@@ -37,7 +37,7 @@ const SimpleTeamTest = () => {
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-400/10 via-pink-400/10 to-cyan-400/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.5, 1],
             rotate: [0, 180, 360],
@@ -71,16 +71,16 @@ const SimpleTeamTest = () => {
               <motion.div
                 className="absolute inset-0 rounded-3xl p-[3px]"
                 style={{
-                  background: `conic-gradient(from 0deg, ${member.color.primary}, ${member.color.secondary}, ${member.color.primary})`,
+                  background: `linear-gradient(135deg, ${member.color.primary}, ${member.color.secondary})`,
                 }}
                 transition={{ duration: 2, ease: 'linear' }}
               >
-                <div className="w-full h-full rounded-3xl bg-gradient-to-br from-slate-900/95 to-slate-800/90"></div>
+                <div className="w-full h-full rounded-3xl bg-gradient-to-br from-slate-900/95 to-slate-800/95 backdrop-blur-sm"></div>
               </motion.div>
 
               {/* Main Card */}
               <motion.div
-                className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/80 backdrop-blur-xl rounded-3xl p-8 text-center h-[500px] flex flex-col justify-center border border-white/10"
+                className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-xl rounded-3xl p-8 text-center h-[500px] flex flex-col justify-center border border-white/5 shadow-2xl"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2, duration: 0.8 }}

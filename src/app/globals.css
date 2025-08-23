@@ -4,19 +4,19 @@
   --background: #ffffff;
   --foreground: #171717;
   
-  /* Enhanced Gradient Color Palette */
-  --primary: #1a1f36;          /* Dark blue-purple */
-  --secondary: #60A5FA;        /* Light blue */
-  --accent-1: #8B5CF6;         /* Purple */
-  --accent-2: #06D6A0;         /* Turquoise */
-  --accent-3: #3B82F6;         /* Blue */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
-  --gradient-accent: linear-gradient(135deg, #06D6A0 0%, #8B5CF6 100%);
-  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8B5CF6 100%);
-  --light: #F5F5F5;
-  --dark: #0f1419;
-  --text: #333333;
+  /* Modern Gradient Color Palette */
+  --primary: #0f172a;          /* Deep navy */
+  --secondary: #3b82f6;        /* Vibrant blue */
+  --accent-1: #6366f1;         /* Indigo */
+  --accent-2: #8b5cf6;         /* Purple */
+  --accent-3: #2dd4bf;         /* Teal */
+  --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #2dd4bf 100%);
+  --gradient-hero: linear-gradient(135deg, #0f172a 0%, #3b82f6 50%, #8b5cf6 100%);
+  --light: #f8fafc;
+  --dark: #0f172a;
+  --text: #1e293b;
 }
 
 @theme inline {
@@ -336,6 +336,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-gradient-studio {
+    background: linear-gradient(to right, #FF6B6B, #4ECDC4, #45B7D1, #96C93D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 300% 100%;
+    animation: gradient-flow 8s ease infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   /* Hover effects */

@@ -72,7 +72,7 @@ const HeroSimple = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Creative<span className="text-gradient-hero bg-gradient-shift">Sync</span>
+            3bit <span className="text-gradient-studio">Studio</span>
           </motion.h1>
           
           <motion.p 
@@ -82,7 +82,7 @@ const HeroSimple = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             We craft exceptional digital experiences through innovative design, 
-            cutting-edge development, and strategic thinking. dfbhdsgyfdwgywgfurewhahe
+            cutting-edge development, and strategic thinking.
           </motion.p>
           
           <motion.div 
@@ -95,7 +95,7 @@ const HeroSimple = () => {
               onClick={() => window.location.href = '/contact'}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-12 lg:px-8 py-4 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 gradient-shift"
+              className="px-12  py-4 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 gradient-shift"
             >
               Get Started
             </motion.button>
@@ -104,7 +104,7 @@ const HeroSimple = () => {
               onClick={()=>{ window.location.href = '#projects'; }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-accent-1 text-accent-1 font-semibold rounded-lg hover:bg-gradient-purple-blue hover:text-white hover:border-transparent transition-all duration-300"
+              className="px-8 py-[13px] border-2 border-accent-1 text-accent-1 font-semibold rounded-lg hover:bg-gradient-purple-blue hover:text-white hover:border-transparent transition-all duration-300"
             >
               View Our Work
             </motion.button>
@@ -119,10 +119,10 @@ const HeroSimple = () => {
           transition={{ duration: 1, delay: 1.2 }}
         >
           {[
-            { value: '150+', label: 'Projects' },
-            { value: '50+', label: 'Clients' },
-            { value: '5+', label: 'Years' },
-            { value: '15+', label: 'Team' },
+            { value: '22+', label: 'Projects' },
+            { value: '16+', label: 'Clients' },
+            { value: '3+', label: 'Years Of Experience' },
+            // { value: '15+', label: 'Team' },
           ].map((stat, index) => (
             <motion.div 
               key={index}

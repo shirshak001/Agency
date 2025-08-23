@@ -12,23 +12,23 @@ const Process = () => {
     offset: ["start end", "end start"]
   });
 
-//   gsap.timeline({
-//   scrollTrigger: {
-//     scrub: 1,
-//     trigger: ".scroll-trigger-ready__worm-wrap",
-//     start: "top 90%",
-//     end: "bottom 30%",
-//   },
-// });
-  
+  //   gsap.timeline({
+  //   scrollTrigger: {
+  //     scrub: 1,
+  //     trigger: ".scroll-trigger-ready__worm-wrap",
+  //     start: "top 90%",
+  //     end: "bottom 30%",
+  //   },
+  // });
+
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  
+
   const boxVariants = {
     hidden: { opacity: 0.5, y: 50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.6,
         ease: "easeOut"
       }
@@ -43,9 +43,9 @@ const Process = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const steps = gsap.utils.toArray('.process-step');
-    
+
     steps.forEach((step, i) => {
       const timeline = gsap.timeline({
         scrollTrigger: {
@@ -56,7 +56,7 @@ const Process = () => {
         }
       });
 
-      timeline.fromTo(step, 
+      timeline.fromTo(step,
         {
           opacity: 0,
           y: 50,
@@ -70,12 +70,12 @@ const Process = () => {
         }
       );
     });
-    
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-  
+
   const steps = [
     {
       id: 1,
@@ -126,28 +126,28 @@ const Process = () => {
       icon: "cog"
     }
   ];
-  
+
   return (
-    <section 
-      ref={sectionRef} 
-      id="process" 
+    <section
+      ref={sectionRef}
+      id="process"
       className="py-12 bg-gradient-to-b from-[#1a1f36] to-primary relative overflow-hidden"
     >
       {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
+        <motion.div
           style={{ opacity }}
           className="absolute top-0 right-0 w-full h-full bg-[url('/grid.svg')] bg-repeat opacity-5"
         />
-        <motion.div 
+        <motion.div
           style={{ opacity }}
           className="absolute top-1/4 right-[10%] w-96 h-96 bg-accent-1/10 rounded-full blur-[120px]"
         />
-        <motion.div 
+        <motion.div
           style={{ opacity }}
           className="absolute bottom-1/4 left-[10%] w-96 h-96 bg-accent-2/10 rounded-full blur-[120px]"
         />
-        <motion.div 
+        <motion.div
           style={{ opacity }}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-96 bg-secondary/10 rounded-full blur-[150px]"
         />
@@ -157,7 +157,7 @@ const Process = () => {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent-2 to-transparent" />
         </div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.div
@@ -166,11 +166,11 @@ const Process = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-hero">
-            Our <span className="text-gradient-accent">Process</span>
-          </h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Our <span className="text-gradient">Process</span>
+            </h2>
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ const Process = () => {
           >
             How We <span className="text-accent-2">Work</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -191,14 +191,14 @@ const Process = () => {
             Our proven step-by-step approach ensures we deliver exceptional results for every project.
           </motion.p>
         </div>
-        
+
         <div className="relative">
           {/* Timeline center line */}
-          <div className="opacity-0 lg:opacity-10 absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-white/10 rounded-full md:block"></div>
-          
+          <div className="opacity-0 lg:opacity-100 absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-[#8B5CF6] to-[#3B82F6] rounded-full md:block"></div>
+
           <div className="space-y-6 md:space-y-8 relative z-10 text-white max-w-6xl mx-auto">
             {steps.map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={step.id}
                 className="process-step md:grid md:grid-cols-2 md:gap-8 items-center relative"
                 initial="hidden"
@@ -206,17 +206,17 @@ const Process = () => {
                 viewport={{ once: true, margin: "-50px" }}
               >
                 {/* Step number circle for desktop */}
-                <motion.div 
+                <motion.div
                   className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-accent-1 rounded-full items-center justify-center text-white font-bold z-10 md:flex hidden"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                 >
-                  
+
                 </motion.div>
-                
+
                 {/* Content positioning based on even/odd */}
-                <motion.div 
+                <motion.div
                   className={`${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'} 
                     group bg-dark/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-white/10 relative
                     max-w-xl mx-auto w-full hover:bg-dark/60 transition-all duration-300`}
@@ -224,7 +224,7 @@ const Process = () => {
                   whileHover="hover"
                 >
                   {/* Step number for mobile */}
-                  <motion.div 
+                  <motion.div
                     className="w-8 h-8 bg-accent-1 rounded-full flex items-center justify-center text-white font-bold mb-4 md:hidden"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
@@ -232,8 +232,8 @@ const Process = () => {
                   >
                     {step.id}
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="flex items-center gap-3 mb-3"
                     initial={{ x: -20, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -242,11 +242,11 @@ const Process = () => {
                     <div className="text-2xl">
                       <Icon name={step.icon} className="w-6 h-6 text-accent-1" />
                     </div>
-                    <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                    <h3 className="text-lg font-bold text-white mx-2">{step.title}</h3>
                   </motion.div>
-                  
-                  <motion.p 
-                    className="text-light/70 text-sm"
+
+                  <motion.p
+                    className="text-light/70 text-sm mx-5"
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
@@ -255,15 +255,15 @@ const Process = () => {
                   </motion.p>
 
                   {/* Connecting line with animation */}
-                  <motion.div 
-                    className={`opacity-0 lg:opacity-10 absolute top-1/2 w-[40px] h-[2px]  bg-white/10
-                      ${index % 2 === 0 ? ' translate-x-full right-[21px]' : 'left-[21px] -translate-x-full'}`}
+                  <motion.div
+                    className={`opacity-0 lg:opacity-100 absolute top-1/2 w-[40px] h-[2px] bg-gradient-to-b from-[#8B5CF6] to-[#3B82F6]
+                      ${index % 2 === 0 ? ' translate-x-full right-[25px]' : ' -translate-x-full left-[25px]'}`}
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ delay: 0.5 }}
                   />
                 </motion.div>
-                
+
                 {/* Empty div for layout on desktop */}
                 <div className={`hidden md:block ${index % 2 === 0 ? 'md:col-start-2' : 'md:col-start-1'}`} />
               </motion.div>

@@ -16,9 +16,14 @@ import Process from '@/components/sections/Process';
 import FAQSection from '@/components/sections/FAQSection';
 import EnhancedNavbar from '@/components/layout/EnhancedNavbar';
 import FloatingNavIndicator from '@/components/ui/FloatingNavIndicator';
+import UltraCreativeTeamSection from '@/components/sections/UltraCreativeTeamSection';
 // import RefinedTeamSection from "@/components/sections/RefinedTeamSection";
 
 // Simple Footer Component
+// import Link from "next/link";
+// import { motion } from "framer-motion";
+import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+
 const SimpleFooter = () => {
   return (
     <footer className="bg-primary py-12 border-t border-gray-800">
@@ -30,18 +35,27 @@ const SimpleFooter = () => {
               Creative<span className="text-secondary">Sync</span>
             </Link>
             <p className="text-gray-400 mb-4 max-w-md">
-              We create exceptional digital experiences that help businesses thrive 
-              in the modern world through innovative design and development.
+              We create exceptional digital experiences that help businesses
+              thrive in the modern world through innovative design and
+              development.
             </p>
             <div className="flex space-x-4">
-              {['', '', '', ''].map((icon, index) => (
-                <motion.button
+              {[
+                { icon: <FaLinkedin />, href: "https://linkedin.com" },
+                { icon: <FaTwitter />, href: "https://twitter.com" },
+                { icon: <FaFacebook />, href: "https://facebook.com" },
+                { icon: <FaInstagram />, href: "https://instagram.com" },
+              ].map((item, index) => (
+                <motion.a
                   key={index}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-lg hover:bg-accent-2 transition-colors"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-lg hover:bg-accent-2 transition-colors text-white"
                 >
-                  {icon}
-                </motion.button>
+                  {item.icon}
+                </motion.a>
               ))}
             </div>
           </div>
@@ -50,10 +64,24 @@ const SimpleFooter = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2">
-              {['Home', 'About', 'Services', 'Projects', 'Team', 'FAQ', 'Contact'].map((link, index) => (
+              {[
+                "Home",
+                "About",
+                "Services",
+                "Projects",
+                "Team",
+                "FAQ",
+                "Contact",
+              ].map((link, index) => (
                 <Link
                   key={index}
-                  href={link === 'Home' ? '/' : link === 'Contact' ? '#contact' : `#${link.toLowerCase()}`}
+                  href={
+                    link === "Home"
+                      ? "/"
+                      : link === "Contact"
+                      ? "#contact"
+                      : `#${link.toLowerCase()}`
+                  }
                   className="block text-gray-400 hover:text-secondary transition-colors"
                 >
                   {link}
@@ -78,9 +106,11 @@ const SimpleFooter = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <div className="space-y-2 text-gray-400">
-              <p> hello@creativesync.com</p>
-              <p> +1 (555) 123-4567</p>
-              <p> San Francisco, CA</p>
+              <p>hello@creativesync.com</p>
+              <p>+91-8791167321</p>
+              <p>+91-8617300719</p>
+              <p>+91-9015195801</p>
+              <p>NIT Hamirpur, H.P, India</p>
             </div>
           </div>
         </div>
@@ -92,6 +122,7 @@ const SimpleFooter = () => {
     </footer>
   );
 };
+
 
 export default function Home() {
   const [progress, setProgress] = useState(0);

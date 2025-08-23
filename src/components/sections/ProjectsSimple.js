@@ -17,89 +17,90 @@ const ProjectsSimple = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A modern e-commerce solution with advanced features and seamless user experience.",
-      detailedDescription: "Built a comprehensive e-commerce platform with real-time inventory management, secure payment processing, and advanced analytics. Features include user authentication, shopping cart functionality, order tracking, and admin dashboard for complete business management.",
-      category: "Web Development",
-      image: "🛒",
-      video: "/videos/soilbuddy.mp4", // Placeholder video
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "JWT", "Socket.io"],
-      features: ["Real-time inventory", "Secure payments", "Order tracking", "Admin dashboard"],
-      duration: "6 months",
+      title: "Soil Health Tracker App",
+      description: "A smart solution to monitor and improve soil health for sustainable farming.",
+      detailedDescription: "Developed an IoT-enabled soil health tracking app that allows farmers to monitor soil moisture, pH, and nutrient levels in real-time. Integrated AI models provide recommendations for fertilizers, irrigation schedules, and crop rotation, helping increase yield and reduce costs.",
+      category: "AgriTech",
+      image: "/images/SoilBuddy.png",
+      video: "/videos/soilbuddy.mp4",
+      tech: ["React Native", "Node.js", "MongoDB", "IoT Sensors", "AI/ML"],
+      features: ["Real-time soil monitoring", "AI-based recommendations", "Fertilizer planning", "Irrigation scheduling"],
+      duration: "2 months",
       team: "4 developers",
       color: "from-accent-1 to-accent-2"
     },
     {
       id: 2,
-      title: "Team Vibhav Project",
-      description: "Complete team collaboration and project management solution with advanced features.",
-      detailedDescription: "Developed a comprehensive team collaboration platform for Vibhav with real-time communication, project tracking, and advanced workflow management. The solution includes video conferencing, file sharing, task management, and team analytics to enhance productivity and collaboration.",
-      category: "Team Collaboration",
-      image: "images/vibhav.png",
+      title: "Team Vibhav Website",
+      description: "Dynamic website for Team Vibhav with portfolio, events, and team management.",
+      detailedDescription: "Designed and developed an official website for Team Vibhav, showcasing projects, achievements, and events. The platform also includes a custom CMS for easy content updates, an event management system, and a responsive design for optimal mobile experience.",
+      category: "Web Development",
+      image: "/images/vibhav.png",
       video: "/videos/team-vibhav.mp4",
-      tech: ["React", "Node.js", "Socket.io", "WebRTC", "MongoDB", "Redis"],
-      features: ["Real-time collaboration", "Video conferencing", "Task management", "Team analytics"],
-      duration: "5 months",
+      tech: ["Next.js", "Tailwind CSS", "Sanity CMS", "Vercel"],
+      features: ["Project showcase", "Event management", "Team profiles", "CMS integration"],
+      duration: "1 months",
       team: "6 developers",
       color: "from-accent-2 to-secondary"
     },
     {
       id: 3,
-      title: "Mobile Banking App",
-      description: "Secure and intuitive mobile banking application with modern UI/UX design.",
-      detailedDescription: "Designed and developed a secure mobile banking application with biometric authentication, real-time transaction monitoring, and advanced security features. Implemented end-to-end encryption, fraud detection, and seamless user experience for financial operations.",
-      category: "Mobile App",
-      image: "📱",
-      video: "/videos/civicledger.mp4", // Placeholder video
-      tech: ["React Native", "Firebase", "Stripe", "Biometric Auth", "Encryption"],
-      features: ["Biometric login", "Real-time transactions", "Fraud detection", "Multi-currency"],
-      duration: "8 months",
+      title: "Tender Allocation Website",
+      description: "A secure platform for managing government and private tenders with transparency.",
+      detailedDescription: "Built a digital tender management system where contractors and organizations can securely apply, track, and manage tenders. Features include role-based authentication, automated bidding workflows, contract management, and document verification.",
+      category: "Web Application",
+      image: "/images/civicledger.png",
+      video: "/videos/civicledger.mp4",
+      tech: ["React", "Node.js", "MongoDB", "JWT", "Solidity"],
+      features: ["Tender listing & bidding", "Contract management", "Secure document upload", "Admin dashboard"],
+      duration: "2 months",
       team: "6 developers",
       color: "from-secondary to-accent-1"
     },
     {
       id: 4,
-      title: "Healthcare Dashboard",
-      description: "Data visualization dashboard for healthcare professionals with real-time analytics.",
-      detailedDescription: "Created an advanced healthcare analytics dashboard with real-time patient monitoring, predictive analytics, and comprehensive reporting tools. Features include patient management, appointment scheduling, medical records, and AI-powered health insights.",
-      category: "Web App",
-      image: "📊",
-      video: "/videos/Coolcare1.mp4", // Placeholder video
-      tech: ["Vue.js", "D3.js", "PostgreSQL", "Python", "Machine Learning", "WebRTC"],
-      features: ["Real-time monitoring", "Predictive analytics", "Patient records", "AI insights"],
-      duration: "10 months",
+      title: "Service Provider App (Fixspire)",
+      description: "On-demand service marketplace for connecting users with professionals.",
+      detailedDescription: "Created a full-featured service provider app where users can book electricians, plumbers, and other professionals on-demand. The system supports real-time booking, in-app chat, secure payments, and provider performance tracking.",
+      category: "Mobile & Web App",
+      image: "/images/Fixspire.png",
+      video: "/videos/Coolcare1.mp4",
+      tech: ["React Native", "Firebase", "Stripe", "Google Maps API"],
+      features: ["Service booking", "Real-time chat", "Payment integration", "Provider tracking"],
+      duration: "2 months",
       team: "8 developers",
       color: "from-accent-1 to-primary"
     },
     {
       id: 5,
-      title: "Restaurant Website",
-      description: "Beautiful restaurant website with online ordering and reservation system.",
-      detailedDescription: "Built a modern restaurant website with online ordering system, table reservation management, menu customization, and integrated payment processing. Features include real-time availability, kitchen management system, and customer loyalty program.",
-      category: "Website",
-      image: "🍽️",
-      video: "/videos/portfolio.mp4", // Placeholder video
-      tech: ["Next.js", "Tailwind", "Sanity", "Stripe", "Google Maps API", "PWA"],
-      features: ["Online ordering", "Table reservations", "Menu management", "Loyalty program"],
-      duration: "4 months",
-      team: "3 developers",
+      title: "Portfolio Website",
+      description: "A sleek personal portfolio to showcase projects, blogs, and achievements.",
+      detailedDescription: "Built a high-performance portfolio website with dynamic project sections, blog integration, and smooth animations. Optimized for SEO, responsive design, and easy scalability using headless CMS integration.",
+      category: "Personal Website",
+      image: "/images/portfolio.png",
+      video: "/videos/portfolio.mp4",
+      tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Sanity CMS"],
+      features: ["Dynamic project showcase", "Blog integration", "SEO optimization", "Responsive design"],
+      duration: "1 month",
+      team: "1 developer",
       color: "from-primary to-accent-2"
     },
     {
       id: 6,
-      title: "Fitness App",
-      description: "Comprehensive fitness tracking app with workout plans and nutrition guides.",
-      detailedDescription: "Developed a complete fitness ecosystem with personalized workout plans, nutrition tracking, progress analytics, and social features. Integrated with wearable devices, AI-powered recommendations, and virtual trainer functionality for optimal user experience.",
-      category: "Mobile App",
-      image: "💪",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4", // Placeholder video
-      tech: ["Flutter", "Firebase", "AI/ML", "HealthKit", "Google Fit", "TensorFlow"],
-      features: ["Personalized plans", "Nutrition tracking", "Progress analytics", "Social features"],
-      duration: "7 months",
+      title: "E-commerce App (LayerForge)",
+      description: "A scalable e-commerce platform with personalized shopping experiences.",
+      detailedDescription: "Developed a full-stack e-commerce app with personalized product recommendations, secure payments, and real-time order tracking. Integrated with analytics and admin dashboards for complete business management.",
+      category: "E-commerce",
+      image: "/images/LayerForge.png",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4", // Replace with actual video later
+      tech: ["Flutter", "Firebase", "Stripe", "AI Recommendations"],
+      features: ["Personalized shopping", "Secure payments", "Order tracking", "Admin dashboard"],
+      duration: "1 month",
       team: "5 developers",
       color: "from-accent-2 to-accent-1"
     }
   ];
+
 
   return (
     <section id="projects" className="py-20 bg-gradient-secondary relative overflow-hidden">
@@ -108,20 +109,20 @@ const ProjectsSimple = () => {
         <div className="absolute top-32 -left-32 w-96 h-96 bg-gradient-purple-blue rounded-full opacity-15 blur-3xl animate-pulse" />
         <div className="absolute bottom-32 -right-32 w-96 h-96 bg-gradient-blue-purple rounded-full opacity-15 blur-3xl animate-pulse delay-500" />
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl p-6 md:text-6xl font-bold mb-6 text-gradient-hero">
-            Our <span className="text-gradient-accent">Projects</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Our <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Take a look at some of our recent work and see how we&apos;ve helped businesses 
+            Take a look at some of our recent work and see how we&apos;ve helped businesses
             achieve their digital goals.
           </p>
         </motion.div>
@@ -138,7 +139,7 @@ const ProjectsSimple = () => {
               onClick={() => setHoveredProject(project)}
             >
               <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl overflow-hidden border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 h-full shadow-2xl hover:shadow-purple-500/20 cursor-pointer transform hover:scale-105 relative">
-                
+
                 {/* Suggestion Text Overlay */}
                 <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 rounded-xl">
                   <div className="text-center p-6">
@@ -155,7 +156,7 @@ const ProjectsSimple = () => {
                         </svg>
                       </div>
                     </motion.div>
-                    
+
                     <motion.h4
                       initial={{ y: 20, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
@@ -164,7 +165,7 @@ const ProjectsSimple = () => {
                     >
                       Click to Explore
                     </motion.h4>
-                    
+
                     <motion.p
                       initial={{ y: 20, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
@@ -173,7 +174,7 @@ const ProjectsSimple = () => {
                     >
                       See detailed project info, tech stack & video demo
                     </motion.p>
-                    
+
                     <motion.div
                       initial={{ scale: 0.8, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
@@ -207,15 +208,15 @@ const ProjectsSimple = () => {
                       {project.category}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-white mb-3">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-gray-300 mb-4 text-sm leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech.slice(0, 3).map((tech, techIndex) => (
@@ -288,17 +289,17 @@ const ProjectsSimple = () => {
                         <p className="text-white">Your browser does not support the video tag.</p>
                       </video>
                     )}
-                    
+
                     {/* Video overlay - lighter so video is more visible */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-20 pointer-events-none" />
-                    
+
                     {/* Category badge */}
                     <div className="absolute top-4 left-4 z-30">
                       <span className="px-3 py-1 bg-purple-600/90 backdrop-blur-sm text-white text-sm rounded-full font-medium">
                         {hoveredProject.category}
                       </span>
                     </div>
-                    
+
                     {/* Debug info - remove this later */}
                     <div className="absolute bottom-4 left-4 z-30 bg-black/50 text-white text-xs p-2 rounded">
                       Video: {hoveredProject.video}
@@ -380,7 +381,7 @@ const ProjectsSimple = () => {
         </AnimatePresence>
 
         {/* CTA Section */}
-        <motion.div 
+        <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -391,6 +392,7 @@ const ProjectsSimple = () => {
             Have a project in mind? Let&apos;s bring it to life together.
           </p>
           <motion.button
+            onClick={() => { window.location.href = '/contact' }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all duration-300"

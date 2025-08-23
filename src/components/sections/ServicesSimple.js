@@ -20,42 +20,42 @@ const ServicesSimple = () => {
       id: 1,
       title: "UI/UX Design",
       description: "Creating intuitive and beautiful user experiences that convert visitors into customers.",
-      icon: "palette",
+      icon: "/1.png",
       color: "bg-gradient-purple-blue"
     },
     {
       id: 2,
       title: "Web Development",
       description: "Building fast, responsive, and scalable websites using modern technologies.",
-      icon: "code",
+      icon: "/5.png",
       color: "bg-gradient-blue-purple"
     },
     {
       id: 3,
-      title: "Branding",
-      description: "Developing strong brand identities that resonate with your target audience.",
-      icon: "rocket",
+      title: "Video Editing",
+      description: "Crafting engaging and professional video content to tell your brand’s story effectively.",
+      icon: "/3.png", // <-- update with your video editing icon asset
       color: "bg-gradient-glow"
     },
     {
       id: 4,
-      title: "Digital Marketing",
-      description: "Strategic marketing campaigns that drive traffic and increase conversions.",
-      icon: "sparkles",
+      title: "AI Automation",
+      description: "Implementing smart AI-driven solutions to automate workflows and boost productivity.",
+      icon: "/2.png", // <-- update with your AI automation icon asset
       color: "bg-gradient-purple-blue"
     },
     {
       id: 5,
       title: "E-commerce",
       description: "Complete e-commerce solutions that help you sell more online.",
-      icon: "briefcase",
+      icon: "/4.png",
       color: "bg-gradient-blue-purple"
     },
     {
       id: 6,
       title: "Mobile Apps",
       description: "Native and cross-platform mobile applications for iOS and Android.",
-      icon: "mobile",
+      icon: "/6.png",
       color: "bg-gradient-glow"
     }
   ];
@@ -93,7 +93,7 @@ const ServicesSimple = () => {
                 {/* Icon */}
                 <div className='mb-4 flex lg:flex-col gap-1 justify-center items-center'> 
                   <div className="text-2xl lg:text-4xl lg:mb-6 text-center">
-                  <Icon name={service.icon} className="w-12 h-12 mx-auto text-accent-1" />
+                  <img src={service.icon} className="w-14 h-12 mx-auto text-accent-1" />
                 </div>
 
                 {/* Title */}
