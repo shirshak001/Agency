@@ -194,7 +194,7 @@ const Process = () => {
         
         <div className="relative">
           {/* Timeline center line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-white/10 rounded-full md:block"></div>
+          <div className="opacity-0 lg:opacity-10 absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-white/10 rounded-full md:block"></div>
           
           <div className="space-y-6 md:space-y-8 relative z-10 text-white max-w-6xl mx-auto">
             {steps.map((step, index) => (
@@ -256,8 +256,8 @@ const Process = () => {
 
                   {/* Connecting line with animation */}
                   <motion.div 
-                    className={`absolute top-1/2 w-[60px] h-[2px] bg-white/10
-                      ${index % 2 === 0 ? 'right-0 translate-x-full' : 'left-0 -translate-x-full'}`}
+                    className={`opacity-0 lg:opacity-10 absolute top-1/2 w-[40px] h-[2px]  bg-white/10
+                      ${index % 2 === 0 ? ' translate-x-full right-[21px]' : 'left-[21px] -translate-x-full'}`}
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ delay: 0.5 }}

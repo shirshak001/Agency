@@ -22,7 +22,7 @@ const ProjectsSimple = () => {
       detailedDescription: "Built a comprehensive e-commerce platform with real-time inventory management, secure payment processing, and advanced analytics. Features include user authentication, shopping cart functionality, order tracking, and admin dashboard for complete business management.",
       category: "Web Development",
       image: "🛒",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4", // Placeholder video
+      video: "/videos/soilbuddy.mp4", // Placeholder video
       tech: ["React", "Node.js", "MongoDB", "Stripe", "JWT", "Socket.io"],
       features: ["Real-time inventory", "Secure payments", "Order tracking", "Admin dashboard"],
       duration: "6 months",
@@ -35,7 +35,7 @@ const ProjectsSimple = () => {
       description: "Complete team collaboration and project management solution with advanced features.",
       detailedDescription: "Developed a comprehensive team collaboration platform for Vibhav with real-time communication, project tracking, and advanced workflow management. The solution includes video conferencing, file sharing, task management, and team analytics to enhance productivity and collaboration.",
       category: "Team Collaboration",
-      image: "👥",
+      image: "images/vibhav.png",
       video: "/videos/team-vibhav.mp4",
       tech: ["React", "Node.js", "Socket.io", "WebRTC", "MongoDB", "Redis"],
       features: ["Real-time collaboration", "Video conferencing", "Task management", "Team analytics"],
@@ -50,7 +50,7 @@ const ProjectsSimple = () => {
       detailedDescription: "Designed and developed a secure mobile banking application with biometric authentication, real-time transaction monitoring, and advanced security features. Implemented end-to-end encryption, fraud detection, and seamless user experience for financial operations.",
       category: "Mobile App",
       image: "📱",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4", // Placeholder video
+      video: "/videos/civicledger.mp4", // Placeholder video
       tech: ["React Native", "Firebase", "Stripe", "Biometric Auth", "Encryption"],
       features: ["Biometric login", "Real-time transactions", "Fraud detection", "Multi-currency"],
       duration: "8 months",
@@ -64,7 +64,7 @@ const ProjectsSimple = () => {
       detailedDescription: "Created an advanced healthcare analytics dashboard with real-time patient monitoring, predictive analytics, and comprehensive reporting tools. Features include patient management, appointment scheduling, medical records, and AI-powered health insights.",
       category: "Web App",
       image: "📊",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4", // Placeholder video
+      video: "/videos/Coolcare1.mp4", // Placeholder video
       tech: ["Vue.js", "D3.js", "PostgreSQL", "Python", "Machine Learning", "WebRTC"],
       features: ["Real-time monitoring", "Predictive analytics", "Patient records", "AI insights"],
       duration: "10 months",
@@ -78,7 +78,7 @@ const ProjectsSimple = () => {
       detailedDescription: "Built a modern restaurant website with online ordering system, table reservation management, menu customization, and integrated payment processing. Features include real-time availability, kitchen management system, and customer loyalty program.",
       category: "Website",
       image: "🍽️",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4", // Placeholder video
+      video: "/videos/portfolio.mp4", // Placeholder video
       tech: ["Next.js", "Tailwind", "Sanity", "Stripe", "Google Maps API", "PWA"],
       features: ["Online ordering", "Table reservations", "Menu management", "Loyalty program"],
       duration: "4 months",
@@ -117,7 +117,7 @@ const ProjectsSimple = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-hero">
+          <h2 className="text-4xl p-6 md:text-6xl font-bold mb-6 text-gradient-hero">
             Our <span className="text-gradient-accent">Projects</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -190,8 +190,8 @@ const ProjectsSimple = () => {
 
                 {/* Project Image/Icon */}
                 <div className="h-48 bg-gradient-purple-blue flex items-center justify-center text-6xl relative overflow-hidden">
-                  {project.image}
-                  
+                  <img src={project.image} alt="" className='object-cover w-full h-full' />
+
                   {/* Original overlay on hover - now hidden when suggestion overlay is active */}
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-0 transition-opacity duration-300">
                     <button className="px-6 py-3 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
@@ -250,7 +250,7 @@ const ProjectsSimple = () => {
               style={{ zIndex: 9999 }}
             >
               <motion.div
-                className="bg-gray-900/95 backdrop-blur-md rounded-2xl border border-purple-500/30 max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+                className="bg-gray-900/95 backdrop-blur-md rounded-2xl border border-purple-500/30 w-[80%] max-h-[90vh] overflow-hidden shadow-2xl"
                 initial={{ scale: 0.8, opacity: 0, y: 50 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.8, opacity: 0, y: 50 }}
@@ -259,12 +259,12 @@ const ProjectsSimple = () => {
               >
                 <div className="flex flex-col lg:flex-row h-full">
                   {/* Left Side - Video */}
-                  <div className="lg:w-1/2 relative bg-black min-h-[400px]">
+                  <div className="lg:w-1/2 relative bg-black min-h-[440px]">
                     {/* Fallback background - always visible as base layer */}
-                    <div className="absolute inset-0 flex items-center justify-center text-8xl bg-gradient-purple-blue">
+                    {/* <div className="absolute inset-0 flex items-center justify-center text-8xl bg-gradient-purple-blue">
                       {hoveredProject.image}
                     </div>
-                    
+                     */}
                     {/* Video element */}
                     {hoveredProject.video && (
                       <video

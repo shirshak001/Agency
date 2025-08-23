@@ -29,9 +29,9 @@ const FAQSection = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="bg-accent-1/20 text-accent-1 px-4 py-1 rounded-full text-sm inline-block mb-4">
+            {/* <span className="bg-accent-1/20 text-accent-1 px-4 py-1 rounded-full text-sm inline-block mb-4">
               FAQ
-            </span>
+            </span> */}
           </motion.div>
 
           <motion.h2
@@ -66,7 +66,7 @@ const FAQSection = () => {
               viewport={{ once: true }}
               className="bg-dark/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-accent-1/30 transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-white mb-3">
+              <h3 className="text-lg font-semibold text-white mb-3 text-shadow-lg">
                 {faq.question}
               </h3>
               <p className="text-light/70 text-sm leading-relaxed">

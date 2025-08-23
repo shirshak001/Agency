@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
-  <rect width="600" height="600" fill="#4B3F72"/>
-  <text x="300" y="300" font-family="Arial" font-size="60" fill="white" text-anchor="middle" dominant-baseline="middle">Founder</text>
-  <circle cx="300" cy="200" r="100" fill="#8B5CF6" opacity="0.5"/>
-</svg>

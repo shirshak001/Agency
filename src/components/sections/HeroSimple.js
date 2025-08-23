@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import CountUp from '@/components/ui/CountUp';
+import Link from 'next/link';
 
 const HeroSimple = () => {
   const [isClient, setIsClient] = useState(false);
@@ -65,7 +67,7 @@ const HeroSimple = () => {
           transition={{ duration: 1, delay: 0.2 }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
+            className="text-4xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -74,13 +76,13 @@ const HeroSimple = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+            className="text-lg md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             We craft exceptional digital experiences through innovative design, 
-            cutting-edge development, and strategic thinking.
+            cutting-edge development, and strategic thinking. dfbhdsgyfdwgywgfurewhahe
           </motion.p>
           
           <motion.div 
@@ -90,14 +92,16 @@ const HeroSimple = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <motion.button
+              onClick={() => window.location.href = '/contact'}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 gradient-shift"
+              className="px-12 lg:px-8 py-4 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 gradient-shift"
             >
               Get Started
             </motion.button>
             
             <motion.button
+              onClick={()=>{ window.location.href = '#projects'; }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-accent-1 text-accent-1 font-semibold rounded-lg hover:bg-gradient-purple-blue hover:text-white hover:border-transparent transition-all duration-300"
@@ -125,8 +129,8 @@ const HeroSimple = () => {
               className="text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                {stat.value}
+              <div className="text-2xl md:text-4xl font-bold text-gradient mb-2">
+                <CountUp to={parseInt(stat.value)} duration={5} />+
               </div>
               <div className="text-gray-400 text-sm md:text-base">
                 {stat.label}

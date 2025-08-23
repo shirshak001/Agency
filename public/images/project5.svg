@@ -1,8 +1,0 @@
-<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="800" fill="#2D3047"/>
-  <rect x="300" y="200" width="600" height="350" rx="20" fill="#1A1F36" stroke="#EF476F" stroke-width="4"/>
-  <polygon points="550,250 550,500 750,375" fill="#FFD166"/>
-  <rect x="350" y="570" width="500" height="30" rx="15" fill="white" fill-opacity="0.2"/>
-  <rect x="400" y="620" width="400" height="30" rx="15" fill="white" fill-opacity="0.2"/>
-  <text x="600" y="700" font-family="Arial" font-size="32" fill="white">Product Promotional Video</text>
-</svg>

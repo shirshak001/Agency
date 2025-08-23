@@ -165,8 +165,8 @@ export default function Home() {
         </motion.div>
 
         {/* Progress Bar */}
-        <div className="w-64 mb-8">
-          <div className="flex justify-between text-xs text-gray-400 mb-2">
+        {/* <div className="w-96 mb-8">
+          <div className="flex justify-between text-md text-gray-400 mb-2">
             <span>Loading Experience</span>
             <span className="text-blue-400 font-semibold">{Math.round(progress)}%</span>
           </div>
@@ -178,9 +178,9 @@ export default function Home() {
               className="h-full bg-gradient-to-r from-blue-500 via-purple-600 to-blue-400 rounded-full"
             />
           </div>
-        </div>
+        </div> */}
 
-        <motion.p
+        {/* <motion.p
           key={Math.floor(progress / 25)}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -192,7 +192,7 @@ export default function Home() {
           {progress >= 50 && progress < 75 && "Preparing user experience..."}
           {progress >= 75 && progress < 100 && "Finalizing magical touches..."}
           {progress >= 100 && "Welcome to CreativeSync! 🎉"}
-        </motion.p>
+        </motion.p> */}
       </div>
     );
   }

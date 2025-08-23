@@ -31,17 +31,17 @@ const AboutSimple = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-hero">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient-hero text-center">
               About <span className="text-gradient-accent">CreativeSync</span>
             </h2>
             
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed text-center">
               We are a passionate team of designers, developers, and strategists who believe 
               in the power of exceptional digital experiences. Since our founding, we&apos;ve been 
               dedicated to helping businesses transform their online presence.
             </p>
             
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed text-center">
               Our approach combines creative innovation with technical expertise to deliver 
               solutions that not only look stunning but also drive real business results.
             </p>
