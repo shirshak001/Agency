@@ -36,7 +36,7 @@ const ProjectsSimple = () => {
       detailedDescription: "Designed and developed an official website for Team Vibhav, showcasing projects, achievements, and events. The platform also includes a custom CMS for easy content updates, an event management system, and a responsive design for optimal mobile experience.",
       category: "Web Development",
       image: "/images/vibhav.png",
-      video: "/videos/team-vibhav.mp4",
+      video: "/videos/vibhav.mp4",
       tech: ["Next.js", "Tailwind CSS", "Sanity CMS", "Vercel"],
       features: ["Project showcase", "Event management", "Team profiles", "CMS integration"],
       duration: "1 months",
@@ -92,8 +92,8 @@ const ProjectsSimple = () => {
       detailedDescription: "Developed a full-stack e-commerce app with personalized product recommendations, secure payments, and real-time order tracking. Integrated with analytics and admin dashboards for complete business management.",
       category: "E-commerce",
       image: "/images/LayerForge.png",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4", // Replace with actual video later
-      tech: ["Flutter", "Firebase", "Stripe", "AI Recommendations"],
+      video: "/videos/Layerforge.mp4", // Replace with actual video later
+      tech: ["React Native", "Firebase", "Stripe", "AI Recommendations"],
       features: ["Personalized shopping", "Secure payments", "Order tracking", "Admin dashboard"],
       duration: "1 month",
       team: "5 developers",
@@ -365,14 +365,14 @@ const ProjectsSimple = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-4">
+                    {/* <div className="flex gap-4">
                       <button className="px-6 py-3 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105">
                         View Live Site
                       </button>
                       <button className="px-6 py-3 border border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300 transform hover:scale-105">
                         View Case Study
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </motion.div>

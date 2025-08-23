@@ -8,24 +8,24 @@ const SimpleTeamTest = () => {
   const teamMembers = [
     {
       name: 'Shresth Maheshwari',
-      role: 'Founder & CEO',
-      bio: 'Visionary leader with 2+ years of experience.',
+      role: 'Full-Stack Developer',
+      bio: 'Passionate developer with expertise in modern web technologies and scalable solutions.',
       color: { primary: '#8B5CF6', secondary: '#06B6D4' },
       // element: '🚀',
       image: '/team/shresth.jpeg', // ✅ Add image
     },
     {
       name: 'Shirshak Mondal',
-      role: 'Creative Director',
-      bio: 'Award-winning designer creating memorable experiences.',
+      role: 'UI/UX Designer',
+      bio: 'Creative designer crafting intuitive user experiences and beautiful interfaces.',
       color: { primary: '#EC4899', secondary: '#8B5CF6' },
       // element: '🎨',
       image: '/team/shirshak.jpeg', // ✅ Add image
     },
     {
       name: 'Ayush Kumar',
-      role: 'CTO',
-      bio: 'Tech innovator specializing in emerging technologies.',
+      role: 'Software Engineer',
+      bio: 'Problem-solver specializing in backend systems and emerging technologies.',
       color: { primary: '#6366F1', secondary: '#EC4899' },
       // element: '💡',
       image: '/team/ayush.jpeg', // ✅ Add image
@@ -33,7 +33,7 @@ const SimpleTeamTest = () => {
   ];
 
   return (
-    <section className="py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <section id='team' className="py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
@@ -89,10 +89,6 @@ const SimpleTeamTest = () => {
                   boxShadow: `0 25px 50px ${member.color.primary}40`,
                 }}
               >
-                {/* Element Icon */}
-
-
-                {/* ✅ Avatar Image */}
                 {/* ✅ Avatar Image with 3D Effect */}
                 <motion.div
                   className="relative w-fit mx-auto mb-6 overflow-visible"
@@ -124,7 +120,6 @@ const SimpleTeamTest = () => {
                     
                   </motion.div>
                 </motion.div>
-
 
                 <motion.h3 className="text-2xl font-bold text-white mb-2">
                   {member.name}

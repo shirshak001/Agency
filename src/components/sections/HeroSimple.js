@@ -122,7 +122,7 @@ const HeroSimple = () => {
             { value: '22+', label: 'Projects' },
             { value: '16+', label: 'Clients' },
             { value: '3+', label: 'Years Of Experience' },
-            // { value: '15+', label: 'Team' },
+            { value: '5+', label: 'Team' },
           ].map((stat, index) => (
             <motion.div 
               key={index}

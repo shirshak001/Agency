@@ -5,13 +5,14 @@ import { useState } from 'react';
 
 const PricingPage = () => {
   const [billingPeriod, setBillingPeriod] = useState('monthly');
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
   const pricingPlans = [
     {
       name: 'Starter',
       description: 'Perfect for small businesses and startups',
-      monthlyPrice: 2999,
-      yearlyPrice: 29990,
+      monthlyPrice: 4999,
+      yearlyPrice: 49990,
       features: [
         'Custom Website Design',
         'Responsive Development',
@@ -27,8 +28,8 @@ const PricingPage = () => {
     {
       name: 'Professional',
       description: 'Ideal for growing businesses',
-      monthlyPrice: 4999,
-      yearlyPrice: 49990,
+      monthlyPrice: 6999,
+      yearlyPrice: 69990,
       features: [
         'Everything in Starter',
         'Advanced UI/UX Design',
@@ -68,10 +69,18 @@ const PricingPage = () => {
   const addOnServices = [
     { name: 'Branding Package', price: 1999, description: 'Logo design, brand guidelines, business cards' },
     { name: 'Video Production', price: 2499, description: 'Promotional videos, animations, motion graphics' },
-    { name: 'Monthly Maintenance', price: 499, description: 'Content updates, security, backups' },
-    { name: 'SEO Boost Package', price: 799, description: 'Advanced SEO optimization and monitoring' },
-    { name: 'Social Media Setup', price: 899, description: 'Profile creation, content strategy, initial posts' }
+    { name: 'Monthly Maintenance', price: 4999, description: 'Content updates, security, backups' },
+    { name: 'SEO Boost Package', price: 7999, description: 'Advanced SEO optimization and monitoring' },
+    { name: 'Social Media Setup', price: 8999, description: 'Profile creation, content strategy, initial posts' }
   ];
+
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      minimumFractionDigits: 0
+    }).format(price);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f0f23] via-[#1a1a2e] to-[#16213e]">
@@ -138,18 +147,42 @@ const PricingPage = () => {
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              className={`relative bg-white/5 backdrop-blur-lg rounded-2xl p-8 border ${
-                plan.popular ? 'border-purple-500/50 ring-2 ring-purple-500/20' : 'border-white/10'
+              className={`relative bg-white/5 backdrop-blur-lg rounded-2xl p-8 border cursor-pointer transition-all duration-300 ${
+                selectedPlan === plan.name 
+                  ? 'border-purple-500 ring-2 ring-purple-500/50 shadow-lg shadow-purple-500/20 bg-white/10 transform scale-105' 
+                  : plan.popular 
+                    ? 'border-purple-500/50 ring-2 ring-purple-500/20' 
+                    : 'border-white/10 hover:border-white/20'
               }`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -5 }}
+              onClick={() => setSelectedPlan(selectedPlan === plan.name ? null : plan.name)}
             >
-              {plan.popular && (
+              {/* Selection Indicator */}
+              {selectedPlan === plan.name && (
+                <div className="absolute -top-4 -right-4">
+                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white w-8 h-8 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+              )}
+
+              {plan.popular && selectedPlan !== plan.name && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-medium">
                     Most Popular
+                  </div>
+                </div>
+              )}
+
+              {selectedPlan === plan.name && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    Selected
                   </div>
                 </div>
               )}
@@ -159,7 +192,7 @@ const PricingPage = () => {
                 <p className="text-white/60 mb-4">{plan.description}</p>
                 <div className="mb-4">
                   <span className="text-4xl font-bold text-white">
-                    ${billingPeriod === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
+                    {formatPrice(billingPeriod === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice)}
                   </span>
                   <span className="text-white/60 ml-2">
                     {billingPeriod === 'monthly' ? '/month' : '/year'}
@@ -178,16 +211,60 @@ const PricingPage = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-3 rounded-lg font-medium transition-all duration-300 ${
-                plan.popular
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/30'
-                  : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
-              }`}>
-                Get Started
+              <button 
+                className={`w-full py-3 rounded-lg font-medium transition-all duration-300 ${
+                  selectedPlan === plan.name
+                    ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:shadow-lg hover:shadow-green-500/30'
+                    : plan.popular
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/30'
+                      : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedPlan(selectedPlan === plan.name ? null : plan.name);
+                }}
+              >
+                {selectedPlan === plan.name ? 'Selected' : 'Select Plan'}
               </button>
             </motion.div>
           ))}
         </div>
+
+        {/* Selected Plan Summary */}
+        {selectedPlan && (
+          <motion.div
+            className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/50 mb-12"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-white mb-2">
+                You've selected the {selectedPlan} Plan
+              </h3>
+              <p className="text-white/70">
+                Ready to get started? Let's discuss your project requirements.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium rounded-full hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300"
+              >
+                Start Your Project
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <button
+                onClick={() => setSelectedPlan(null)}
+                className="inline-flex items-center justify-center px-8 py-3 bg-white/10 text-white font-medium rounded-full hover:bg-white/20 border border-white/20 transition-all duration-300"
+              >
+                Change Selection
+              </button>
+            </div>
+          </motion.div>
+        )}
 
         {/* Add-on Services */}
         <motion.div
@@ -201,13 +278,15 @@ const PricingPage = () => {
             {addOnServices.map((service, index) => (
               <motion.div
                 key={service.name}
-                className="bg-white/5 rounded-lg p-6 border border-white/10"
+                className="bg-white/5 rounded-lg p-6 border border-white/10 hover:border-white/20 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
                 <h3 className="text-xl font-semibold text-white mb-2">{service.name}</h3>
                 <p className="text-white/60 mb-4">{service.description}</p>
-                <div className="text-2xl font-bold text-purple-400">${service.price}</div>
+                <div className="text-2xl font-bold text-purple-400">
+                  {formatPrice(service.price)}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -236,7 +315,7 @@ const PricingPage = () => {
             </div>
             <div>
               <h3 className="text-xl font-semibold text-white mb-3">What payment methods do you accept?</h3>
-              <p className="text-white/70">We accept all major credit cards, PayPal, bank transfers, and cryptocurrency payments.</p>
+              <p className="text-white/70">We accept all major credit cards, PayPal, bank transfers, UPI, and digital wallet payments.</p>
             </div>
           </div>
         </motion.div>

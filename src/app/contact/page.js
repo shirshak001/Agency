@@ -123,7 +123,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Office Address</h3>
-                    <p className="text-white/70">123 Innovation Street<br />Creative District, CA 94103</p>
+                    <p className="text-white/70">NIT Hamirpur<br />H.P.  India</p>
                   </div>
                 </div>
 
@@ -135,7 +135,9 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Phone Number</h3>
-                    <p className="text-white/70">+1 (555) 123-4567</p>
+                    <p className="text-white/70">+91-8791167321</p>
+                    <p className="text-white/70">+91-8617300719</p>
+                    <p className="text-white/70">+91-9015195801</p>
                   </div>
                 </div>
 
@@ -147,7 +149,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Email Address</h3>
-                    <p className="text-white/70">hello@creativesync.com</p>
+                    <p className="text-white/70">3threebitstudi@gmail.com</p>
                   </div>
                 </div>
 

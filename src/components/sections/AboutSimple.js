@@ -32,7 +32,7 @@ const AboutSimple = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              About <span className="text-gradient">CreativeSync</span>
+              About <span className="text-gradient">3Bit Studio</span>
             </h2>
 
             <p className="text-lg text-gray-300 mb-6 leading-relaxed text-center lg:text-left">

@@ -9,14 +9,14 @@ import AboutSimple from "@/components/sections/AboutSimple";
 import ServicesSimple from "@/components/sections/ServicesSimple";
 import ProjectsSimple from "@/components/sections/ProjectsSimple";
 import ContactSimple from "@/components/sections/ContactSimple";
-import Testimonials from '@/components/sections/Testimonials';
+// import Testimonials from '@/components/sections/Testimonials';
 import TeamPage from './team/page';
 import SimpleTeamTest from "@/components/sections/SimpleTeamTest";
 import Process from '@/components/sections/Process';
 import FAQSection from '@/components/sections/FAQSection';
 import EnhancedNavbar from '@/components/layout/EnhancedNavbar';
 import FloatingNavIndicator from '@/components/ui/FloatingNavIndicator';
-import UltraCreativeTeamSection from '@/components/sections/UltraCreativeTeamSection';
+// import UltraCreativeTeamSection from '@/components/sections/UltraCreativeTeamSection';
 // import RefinedTeamSection from "@/components/sections/RefinedTeamSection";
 
 // Simple Footer Component
@@ -106,7 +106,7 @@ const SimpleFooter = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <div className="space-y-2 text-gray-400">
-              <p>hello@creativesync.com</p>
+              <p>3threebitstudio@gmail.com</p>
               <p>+91-8791167321</p>
               <p>+91-8617300719</p>
               <p>+91-9015195801</p>
