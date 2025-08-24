@@ -4,10 +4,10 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
       disallow: [
-        '/private/',
-        '/admin/',
-        '/_next/',
         '/api/',
+        '/_next/',
+        '/admin/',
+        '/private/',
       ],
     },
     sitemap: 'https://www.3bitstudio.com/sitemap.xml',
