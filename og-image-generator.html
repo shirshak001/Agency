@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Generator - 3Bit Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0F0F23 0%, #1E1B4B 50%, #312E81 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .og-preview {
+            width: 600px;
+            height: 315px;
+            background: linear-gradient(135deg, #0F0F23 0%, #1E1B4B 50%, #312E81 100%);
+            border: 2px solid #8B5CF6;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .og-preview::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #8B5CF6, #3B82F6);
+            border-radius: 50%;
+            opacity: 0.1;
+            top: -150px;
+            right: -150px;
+        }
+        .og-preview::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(225deg, #EC4899, #8B5CF6);
+            border-radius: 50%;
+            opacity: 0.1;
+            bottom: -100px;
+            left: -100px;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #8B5CF6, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            z-index: 2;
+        }
+        .description {
+            font-size: 16px;
+            color: #E5E7EB;
+            z-index: 2;
+        }
+        .accent {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #8B5CF6, #3B82F6);
+            border-radius: 2px;
+            margin-top: 15px;
+        }
+        .instructions {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid #8B5CF6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create OG Images for Better SEO</h1>
+        
+        <div class="og-preview">
+            <div class="logo">3Bit Studio</div>
+            <div class="title">Premier Digital Agency</div>
+            <div class="description">Web Development • Mobile Apps • UI/UX Design • AI Automation</div>
+            <div class="accent"></div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📸 How to Create OG Images:</h3>
+            <ol>
+                <li><strong>Screenshot this preview</strong> (1200x630px is ideal)</li>
+                <li><strong>Save as:</strong> <code>public/og-image.jpg</code></li>
+                <li><strong>Create variations for:</strong>
+                    <ul>
+                        <li>Contact page: "Get Your Project Started"</li>
+                        <li>Pricing page: "Transparent Pricing"</li>
+                        <li>FAQ page: "Questions Answered"</li>
+                    </ul>
+                </li>
+                <li><strong>Alternative:</strong> Use tools like Canva, Figma, or online generators</li>
+            </ol>
+        </div>
+        
+        <div class="instructions">
+            <h3>🚀 Quick SEO Boost Actions:</h3>
+            <ol>
+                <li><strong>Set up Google Search Console</strong> (see instructions file)</li>
+                <li><strong>Submit sitemap:</strong> <code>https://www.3bitstudio.com/sitemap.xml</code></li>
+                <li><strong>Request indexing</strong> for each page manually</li>
+                <li><strong>Create social media profiles</strong> and link to your site</li>
+                <li><strong>Get listed in business directories</strong></li>
+                <li><strong>Create quality content</strong> and update regularly</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
