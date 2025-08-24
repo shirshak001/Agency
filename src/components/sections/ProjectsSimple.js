@@ -1,6 +1,7 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const ProjectsSimple = () => {
   const [isClient, setIsClient] = useState(false);
@@ -191,7 +192,13 @@ const ProjectsSimple = () => {
 
                 {/* Project Image/Icon */}
                 <div className="h-40 sm:h-48 bg-gradient-purple-blue flex items-center justify-center text-6xl relative overflow-hidden">
-                  <img src={project.image} alt="" className='object-cover w-full h-full' />
+                  <Image 
+                    src={project.image} 
+                    alt={`${project.title} - ${project.description}`}
+                    fill
+                    className='object-cover'
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
 
                   {/* Original overlay on hover - now hidden when suggestion overlay is active */}
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-0 transition-opacity duration-300">
