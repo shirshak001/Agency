@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seo:validate": "node scripts/validate-seo.js",
+    "seo:test": "npm run seo:validate"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
