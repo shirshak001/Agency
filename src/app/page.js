@@ -88,7 +88,7 @@ const SimpleFooter = () => {
                 </Link>
               ))}
               <Link
-                href="/terms-conditions"
+                href="/terms"
                 className="block text-gray-400 hover:text-secondary transition-colors"
               >
                 Terms & Conditions
