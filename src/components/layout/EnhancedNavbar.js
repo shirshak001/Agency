@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Icon from '../ui/Icon';
 
@@ -120,27 +120,54 @@ const EnhancedNavbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="lg:hidden bg-primary/95 backdrop-blur-xl border-t border-white/10"
-        >
-          <div className="p-4 flex flex-col space-y-3">
-            {navItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="text-white hover:text-accent-1"
-                onClick={() => { setIsOpen(false); setActiveItem(index); }}
-              >
-                {item.title}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "100%", opacity: 0 }}
+            transition={{ type: "spring", bounce: 0, duration: 0.3 }}
+            className="fixed lg:hidden top-[80px] right-0 w-full h-[calc(100vh-80px)] bg-background text-center shadow-xl border-l border-white/10 z-50"
+          >
+            <div className="flex flex-col h-full overflow-y-auto">
+              {/* Menu Items */}
+              <div className="flex-1 p-4 space-y-2">
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ x: 20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${
+                        activeItem === index 
+                          ? 'bg-accent-1/10 text-accent-1' 
+                          : 'text-white/90 hover:bg-white/5 hover:text-white'
+                      }`}
+                      onClick={() => { setIsOpen(false); setActiveItem(index); }}
+                    >
+                      <Icon name={item.icon} className="w-5 h-5" />
+                      <span className="text-base font-medium">{item.title}</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Close Button */}
+              <div className="p-4">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-full px-4 py-2 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 gradient-shift"
+                >
+                  Close Menu
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

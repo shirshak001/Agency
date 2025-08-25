@@ -10,6 +10,8 @@ const ProjectsSimple = () => {
     setIsClient(true);
   }, []);
 
+  
+
   if (!isClient) {
     return <div className="h-96 bg-primary"></div>;
   }
@@ -21,8 +23,8 @@ const ProjectsSimple = () => {
       description: "A smart solution to monitor and improve soil health for sustainable farming.",
       detailedDescription: "Developed an IoT-enabled soil health tracking app that allows farmers to monitor soil moisture, pH, and nutrient levels in real-time. Integrated AI models provide recommendations for fertilizers, irrigation schedules, and crop rotation, helping increase yield and reduce costs.",
       category: "AgriTech",
-      image: "/images/SoilBuddy.png",
-      video: "/videos/soilbuddy.mp4",
+      image: "/images/SoilBuddy.webp",
+      video: "/videos/soilbuddy.webm",
       tech: ["React Native", "Node.js", "MongoDB", "IoT Sensors", "AI/ML"],
       features: ["Real-time soil monitoring", "AI-based recommendations", "Fertilizer planning", "Irrigation scheduling"],
       duration: "2 months",
@@ -35,8 +37,8 @@ const ProjectsSimple = () => {
       description: "Dynamic website for Team Vibhav with portfolio, events, and team management.",
       detailedDescription: "Designed and developed an official website for Team Vibhav, showcasing projects, achievements, and events. The platform also includes a custom CMS for easy content updates, an event management system, and a responsive design for optimal mobile experience.",
       category: "Web Development",
-      image: "/images/vibhav.png",
-      video: "/videos/vibhav.mp4",
+      image: "/images/vibhav.webp",
+      video: "/videos/vibhav.webm",
       tech: ["Next.js", "Tailwind CSS", "Sanity CMS", "Vercel"],
       features: ["Project showcase", "Event management", "Team profiles", "CMS integration"],
       duration: "1 months",
@@ -49,8 +51,8 @@ const ProjectsSimple = () => {
       description: "A secure platform for managing government and private tenders with transparency.",
       detailedDescription: "Built a digital tender management system where contractors and organizations can securely apply, track, and manage tenders. Features include role-based authentication, automated bidding workflows, contract management, and document verification.",
       category: "Web Application",
-      image: "/images/civicledger.png",
-      video: "/videos/civicledger.mp4",
+      image: "/images/civicledger.webp",
+      video: "/videos/civicledger.webm",
       tech: ["React", "Node.js", "MongoDB", "JWT", "Solidity"],
       features: ["Tender listing & bidding", "Contract management", "Secure document upload", "Admin dashboard"],
       duration: "2 months",
@@ -63,8 +65,8 @@ const ProjectsSimple = () => {
       description: "On-demand service marketplace for connecting users with professionals.",
       detailedDescription: "Created a full-featured service provider app where users can book electricians, plumbers, and other professionals on-demand. The system supports real-time booking, in-app chat, secure payments, and provider performance tracking.",
       category: "Mobile & Web App",
-      image: "/images/Fixspire.png",
-      video: "/videos/Coolcare1.mp4",
+      image: "/images/Fixspire.webp",
+      video: "/videos/Coolcare1.webm",
       tech: ["React Native", "Firebase", "Stripe", "Google Maps API"],
       features: ["Service booking", "Real-time chat", "Payment integration", "Provider tracking"],
       duration: "2 months",
@@ -77,8 +79,8 @@ const ProjectsSimple = () => {
       description: "A sleek personal portfolio to showcase projects, blogs, and achievements.",
       detailedDescription: "Built a high-performance portfolio website with dynamic project sections, blog integration, and smooth animations. Optimized for SEO, responsive design, and easy scalability using headless CMS integration.",
       category: "Personal Website",
-      image: "/images/portfolio.png",
-      video: "/videos/portfolio.mp4",
+      image: "/images/portfolio.webp",
+      video: "/videos/portfolio.webm",
       tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Sanity CMS"],
       features: ["Dynamic project showcase", "Blog integration", "SEO optimization", "Responsive design"],
       duration: "1 month",
@@ -91,8 +93,8 @@ const ProjectsSimple = () => {
       description: "A scalable e-commerce platform with personalized shopping experiences.",
       detailedDescription: "Developed a full-stack e-commerce app with personalized product recommendations, secure payments, and real-time order tracking. Integrated with analytics and admin dashboards for complete business management.",
       category: "E-commerce",
-      image: "/images/LayerForge.png",
-      video: "/videos/Layerforge.mp4", // Replace with actual video later
+      image: "/images/LayerForge.webp",
+      video: "/videos/Layerforge.webm", // Replace with actual video later
       tech: ["React Native", "Firebase", "Stripe", "AI Recommendations"],
       features: ["Personalized shopping", "Secure payments", "Order tracking", "Admin dashboard"],
       duration: "1 month",
@@ -251,7 +253,7 @@ const ProjectsSimple = () => {
               style={{ zIndex: 9999 }}
             >
               <motion.div
-                className="bg-gray-900/95 backdrop-blur-md rounded-2xl border border-purple-500/30 w-[80%] max-h-[90vh] overflow-hidden shadow-2xl"
+                className="bg-gray-900/95 backdrop-blur-md  z-100 rounded-2xl border border-purple-500/30 w-[80%] max-h-[90vh] overflow-hidden shadow-2xl"
                 initial={{ scale: 0.8, opacity: 0, y: 50 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.8, opacity: 0, y: 50 }}
@@ -285,7 +287,7 @@ const ProjectsSimple = () => {
                         }}
                         onLoadedData={() => console.log('📼 Video data loaded:', hoveredProject.video)}
                       >
-                        <source src={hoveredProject.video} type="video/mp4" />
+                        <source src={hoveredProject.video} type="video/webm" />
                         <p className="text-white">Your browser does not support the video tag.</p>
                       </video>
                     )}
