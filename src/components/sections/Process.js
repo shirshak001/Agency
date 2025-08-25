@@ -131,7 +131,7 @@ const Process = () => {
     <section
       ref={sectionRef}
       id="process"
-      className="py-12 bg-gradient-to-b from-[#1a1f36] to-primary relative overflow-hidden"
+      className="py-12 bg-gradient-to-b from-[#1a1f36] to-primary relative z-0 overflow-hidden"
     >
       {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden">

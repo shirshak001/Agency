@@ -61,7 +61,7 @@ const ContactSimple = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-primary relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gradient-primary relative overflow-hidden z-0">
       {/* Background gradient orbs */}
       <div className="absolute inset-0">
         <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-blue-purple rounded-full opacity-20 blur-3xl animate-pulse" />

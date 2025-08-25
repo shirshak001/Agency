@@ -33,7 +33,7 @@ const SimpleTeamTest = () => {
   ];
 
   return (
-    <section id='team' className="py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <section id='team' className="py-32 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative z-0 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div

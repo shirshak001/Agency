@@ -260,7 +260,7 @@ const ProjectsSimple = () => {
               style={{ zIndex: 9999 }}
             >
               <motion.div
-                className="bg-gray-900/95 backdrop-blur-md rounded-2xl border border-purple-500/30 w-full max-w-2xl sm:max-w-3xl md:max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden shadow-2xl relative"
+                className="bg-gray-900/95 backdrop-blur-md rounded-2xl border border-purple-500/30 w-full max-w-2xl sm:max-w-3xl md:max-w-[80%] max-h-[95vh] sm:max-h-[90vh] overflow-hidden shadow-2xl relative"
                 initial={{ scale: 0.95, opacity: 0, y: 50 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.95, opacity: 0, y: 50 }}

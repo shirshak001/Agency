@@ -99,7 +99,7 @@ const ServicesSimple = () => {
                     alt={`${service.title} icon`}
                     width={56}
                     height={48}
-                    className="mx-auto text-accent-1" 
+                    className="mx-auto text-accent-1 object-cover" 
                   />
                 </div>
 
