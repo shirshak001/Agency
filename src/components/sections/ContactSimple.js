@@ -181,7 +181,7 @@ const ContactSimple = () => {
                   {
                     icon: <FaEnvelope className="w-6 h-6 text-accent-1" />,
                     title: 'Email',
-                    info: 'hello@creativesync.com',
+                    info: '3threebitstudio@gmail.com',
                     description: 'Send us an email anytime'
                   },
                   {
