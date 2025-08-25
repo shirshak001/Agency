@@ -159,9 +159,9 @@ const EnhancedNavbar = () => {
               <div className="p-4">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="w-full px-4 py-2 bg-gradient-blue-purple text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 gradient-shift"
+                  className="rounded-[50%] relative bottom-24 px-7 py-5 font-light text-white  shadow-2xl hover:shadow-4xl transition-all duration-300 gradient-shift bg-blue-950"
                 >
-                  Close Menu
+                  X
                 </button>
               </div>
             </div>
