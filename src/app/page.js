@@ -10,7 +10,7 @@ import ServicesSimple from "@/components/sections/ServicesSimple";
 import ProjectsSimple from "@/components/sections/ProjectsSimple";
 import ContactSimple from "@/components/sections/ContactSimple";
 // import Testimonials from '@/components/sections/Testimonials';
-import TeamPage from './team/page';
+// import TeamPage from './team/page';
 import SimpleTeamTest from "@/components/sections/SimpleTeamTest";
 import Process from '@/components/sections/Process';
 import FAQSection from '@/components/sections/FAQSection';
@@ -32,7 +32,7 @@ const SimpleFooter = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <Link href="/" className="text-2xl font-bold text-white mb-4 block">
-              Creative<span className="text-secondary">Sync</span>
+              3bit<span className="text-secondary">Studio</span>
             </Link>
             <p className="text-gray-400 mb-4 max-w-md">
               We create exceptional digital experiences that help businesses
@@ -88,7 +88,7 @@ const SimpleFooter = () => {
                 </Link>
               ))}
               <Link
-                href="/terms-conditions"
+                href="/terms"
                 className="block text-gray-400 hover:text-secondary transition-colors"
               >
                 Terms & Conditions

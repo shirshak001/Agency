@@ -240,10 +240,10 @@ const PricingPage = () => {
           >
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-white mb-2">
-                You've selected the {selectedPlan} Plan
+                You&apos;ve selected the {selectedPlan} Plan
               </h3>
               <p className="text-white/70">
-                Ready to get started? Let's discuss your project requirements.
+                Ready to get started? Let&apos;s discuss your project requirements.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

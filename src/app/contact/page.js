@@ -149,7 +149,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">Email Address</h3>
-                    <p className="text-white/70">3threebitstudi@gmail.com</p>
+                    <p className="text-white/70">3threebitstudio@gmail.com</p>
                   </div>
                 </div>
 
@@ -319,7 +319,7 @@ const ContactPage = () => {
                     </svg>
                     <div>
                       <h4 className="text-green-400 font-medium">Message Sent Successfully!</h4>
-                      <p className="text-green-300/80 text-sm">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                      <p className="text-green-300/80 text-sm">Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
                     </div>
                   </motion.div>
                 )}
@@ -359,7 +359,7 @@ const ContactPage = () => {
                   ) : (
                     <div className="flex items-center justify-center">
                       Send Message
-                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 ml-2 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                       </svg>
                     </div>

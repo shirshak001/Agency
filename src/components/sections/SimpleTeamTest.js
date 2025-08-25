@@ -16,8 +16,8 @@ const SimpleTeamTest = () => {
     },
     {
       name: 'Shirshak Mondal',
-      role: 'UI/UX Designer',
-      bio: 'Creative designer crafting intuitive user experiences and beautiful interfaces.',
+      role: 'Product Designer',
+      bio: 'Shaping the future of experiences through design and innovation..',
       color: { primary: '#EC4899', secondary: '#8B5CF6' },
       // element: '🎨',
       image: '/team/shirshak.jpeg', // ✅ Add image

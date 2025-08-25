@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Icon from '../ui/Icon';
 import StarBorder from '../ui/StarBorder';
@@ -93,7 +94,13 @@ const ServicesSimple = () => {
                 {/* Icon */}
                 <div className='mb-4 flex lg:flex-col gap-1 justify-center items-center'> 
                   <div className="text-2xl lg:text-4xl lg:mb-6 text-center">
-                  <img src={service.icon} className="w-14 h-12 mx-auto text-accent-1" />
+                  <Image 
+                    src={service.icon} 
+                    alt={`${service.title} icon`}
+                    width={56}
+                    height={48}
+                    className="mx-auto text-accent-1" 
+                  />
                 </div>
 
                 {/* Title */}
