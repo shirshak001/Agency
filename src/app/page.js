@@ -99,6 +99,12 @@ const SimpleFooter = () => {
               >
                 Pricing
               </Link>
+              <Link
+                href="/blog"
+                className="block text-gray-400 hover:text-secondary transition-colors"
+              >
+                Blog & Insights
+              </Link>
             </div>
           </div>
 

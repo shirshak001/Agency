@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.3bitstudio.com/sitemap.xml
+
+# Allow search engines to crawl all pages
+Allow: /
+Allow: /contact
+Allow: /pricing
+Allow: /faq
+Allow: /blog
+Allow: /insights
+Allow: /blog/*

@@ -72,17 +72,18 @@ const HeroSimple = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            <span className="text-secondary block text-2xl md:text-3xl lg:text-4xl mb-2"></span>
             3bit <span className="text-gradient-studio">Studio</span>
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+            className="text-lg md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            We craft exceptional digital experiences through innovative design, 
-            cutting-edge development, and strategic thinking.
+             <strong>Premium Web Development & Digital Solutions</strong> <br/>
+            
           </motion.p>
           
           <motion.div 
@@ -119,10 +120,10 @@ const HeroSimple = () => {
           transition={{ duration: 1, delay: 1.2 }}
         >
           {[
-            { value: '22+', label: 'Projects' },
-            { value: '16+', label: 'Clients' },
-            { value: '3+', label: 'Years Of Experience' },
-            { value: '5+', label: 'Team' },
+            { value: '22', label: 'Projects Completed' },
+            { value: '15', label: 'Happy Clients' },
+            { value: '24/7', label: 'Hours Support' },
+            { value: '99', label: '% Success Rate' },
           ].map((stat, index) => (
             <motion.div 
               key={index}

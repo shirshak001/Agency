@@ -9,69 +9,113 @@ const PricingPage = () => {
 
   const pricingPlans = [
     {
-      name: 'Starter',
-      description: 'Perfect for small businesses and startups',
-      monthlyPrice: 4999,
-      yearlyPrice: 49990,
-      features: [
-        'Custom Website Design',
-        'Responsive Development',
-        'Basic SEO Optimization',
-        '3 Rounds of Revisions',
-        'Mobile-First Approach',
-        '30 Days Support',
-        'Analytics Setup'
-      ],
-      popular: false,
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      name: 'Professional',
-      description: 'Ideal for growing businesses',
-      monthlyPrice: 6999,
-      yearlyPrice: 69990,
-      features: [
-        'Everything in Starter',
-        'Advanced UI/UX Design',
-        'E-commerce Integration',
-        'CMS Development',
-        'Advanced SEO',
-        '5 Rounds of Revisions',
-        '90 Days Support',
-        'Performance Optimization',
-        'Social Media Integration'
-      ],
-      popular: true,
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      name: 'Enterprise',
-      description: 'For large-scale projects and enterprises',
+      name: 'Standard Plan',
+      description: '🔥 Most Popular - Perfect for small businesses',
       monthlyPrice: 9999,
+      originalPrice: 15000,
       yearlyPrice: 99990,
       features: [
-        'Everything in Professional',
-        'Custom Web Applications',
-        'Machine Learning Integration',
-        'Advanced Analytics',
-        'Multi-language Support',
-        'Unlimited Revisions',
-        '1 Year Support',
-        'Dedicated Project Manager',
-        'Priority Support',
-        'Custom Integrations'
+        '✅ 5 Pages Website',
+        '✅ 1 Year Free Domain (.com .in .org)',
+        '✅ 1 Year Free Cloud Hosting',
+        '✅ Dynamic Website (Premium Design)',
+        '✅ Admin Access',
+        '✅ Free SSL Certificate',
+        '✅ 5 Free Email IDs',
+        '✅ SEO Friendly Website',
+        '✅ 100% Responsive Website',
+        '✅ Live Chat Integration',
+        '✅ Payment Gateway Integration',
+        '✅ Social Media Integration',
+        '✅ WhatsApp Button Integration',
+        '✅ Inquiry Form',
+        '✅ 1 Year Free Technical Support',
+        '✅ 24/7 Customer Support'
       ],
       popular: false,
-      color: 'from-orange-500 to-red-500'
+      color: 'from-blue-500 to-cyan-500',
+      gst: '+ 18% GST ₹1,800',
+      badge: 'BEST VALUE'
+    },
+    {
+      name: 'Premium Plan',
+      description: '💎 Ideal for growing businesses & E-commerce',
+      monthlyPrice: 19999,
+      originalPrice: 30000,
+      yearlyPrice: 199990,
+      features: [
+        '✅ 12 Pages Website',
+        '✅ 1 Year Free Domain (.com .in .org)',
+        '✅ 1 Year Free Cloud Hosting',
+        '✅ Dynamic Website (Premium Design)',
+        '✅ Admin Access',
+        '✅ Google Search Console Setup',
+        '✅ Free SSL Certificate',
+        '✅ 10 Free Email IDs',
+        '✅ SEO Friendly Website',
+        '✅ 100% Responsive Website',
+        '✅ Live Chat Integration',
+        '✅ Payment Gateway Integration',
+        '✅ Social Media Integration',
+        '✅ WhatsApp Button Integration',
+        '✅ Inquiry Form',
+        '✅ WooCommerce Features',
+        '✅ 1 Year Free Technical Support',
+        '✅ 24/7 Priority Support',
+        '✅ Advanced Analytics Setup'
+      ],
+      popular: true,
+      color: 'from-purple-500 to-pink-500',
+      gst: '+ 18% GST ₹3,600',
+      badge: 'RECOMMENDED'
+    },
+    {
+      name: 'Enterprise Plan',
+      description: '🚀 For large businesses & Custom Requirements',
+      monthlyPrice: 49999,
+      originalPrice: 75000,
+      yearlyPrice: 499990,
+      features: [
+        '✅ Unlimited Pages Website',
+        '✅ 1 Year Free Domain (.com .in .org)',
+        '✅ 1 Year Free Cloud Hosting',
+        '✅ Custom Website Development',
+        '✅ Admin Access',
+        '✅ Google Search Console Setup',
+        '✅ Advanced Analytics Dashboard',
+        '✅ Free SSL Certificate',
+        '✅ 20 Free Email IDs',
+        '✅ SEO Optimized Website',
+        '✅ 100% Responsive Website',
+        '✅ Live Chat Integration',
+        '✅ Payment Gateway Integration',
+        '✅ Social Media Integration',
+        '✅ WhatsApp Button Integration',
+        '✅ Advanced Contact Forms',
+        '✅ Multi-vendor E-commerce Features',
+        '✅ Custom API Integration',
+        '✅ Advanced Security Features',
+        '✅ Performance Optimization',
+        '✅ 1 Year Free Technical Support',
+        '✅ 24/7 Priority Support',
+        '✅ Dedicated Project Manager',
+        '✅ Unlimited Revisions'
+      ],
+      popular: false,
+      color: 'from-orange-500 to-red-500',
+      gst: '+ 18% GST ₹9,000',
+      badge: 'ENTERPRISE'
     }
   ];
 
   const addOnServices = [
-    { name: 'Branding Package', price: 1999, description: 'Logo design, brand guidelines, business cards' },
-    { name: 'Video Production', price: 2499, description: 'Promotional videos, animations, motion graphics' },
-    { name: 'Monthly Maintenance', price: 4999, description: 'Content updates, security, backups' },
-    { name: 'SEO Boost Package', price: 7999, description: 'Advanced SEO optimization and monitoring' },
-    { name: 'Social Media Setup', price: 8999, description: 'Profile creation, content strategy, initial posts' }
+    { name: 'Branding Package', price: 4999, description: '🎨 Logo design, brand guidelines, business cards, letterhead' },
+    { name: 'Video Production', price: 9999, description: '🎬 Promotional videos, animations, motion graphics, editing' },
+    { name: 'Monthly Maintenance', price: 2999, description: '🔧 Content updates, security, backups, monitoring' },
+    { name: 'SEO Boost Package', price: 7999, description: '📈 Advanced SEO optimization, keyword research, monthly reports' },
+    { name: 'Social Media Setup', price: 5999, description: '📱 Profile creation, content strategy, 30 initial posts' },
+    { name: 'Mobile App Development', price: 39999, description: '📱 Cross-platform mobile app (Android & iOS)' },
+    { name: 'AI Chatbot Integration', price: 12999, description: '🤖 Smart chatbot for customer support automation' }
   ];
 
   const formatPrice = (price) => {
@@ -174,7 +218,15 @@ const PricingPage = () => {
               {plan.popular && selectedPlan !== plan.name && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-                    Most Popular
+                    {plan.badge || 'Most Popular'}
+                  </div>
+                </div>
+              )}
+
+              {!plan.popular && plan.badge && selectedPlan !== plan.name && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className={`bg-gradient-to-r ${plan.color} text-white px-4 py-2 rounded-full text-sm font-medium`}>
+                    {plan.badge}
                   </div>
                 </div>
               )}
@@ -191,12 +243,22 @@ const PricingPage = () => {
                 <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                 <p className="text-white/60 mb-4">{plan.description}</p>
                 <div className="mb-4">
+                  {plan.originalPrice && (
+                    <div className="text-sm text-white/50 line-through mb-1">
+                      ₹{plan.originalPrice.toLocaleString('en-IN')}
+                    </div>
+                  )}
                   <span className="text-4xl font-bold text-white">
                     {formatPrice(billingPeriod === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice)}
                   </span>
                   <span className="text-white/60 ml-2">
-                    {billingPeriod === 'monthly' ? '/month' : '/year'}
+                    {billingPeriod === 'monthly' ? '/one-time' : '/year'}
                   </span>
+                  {plan.gst && (
+                    <div className="text-sm text-yellow-400 mt-1">
+                      {plan.gst}
+                    </div>
+                  )}
                 </div>
               </div>
 
