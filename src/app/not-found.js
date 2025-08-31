@@ -80,7 +80,7 @@ export default function NotFound() {
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-20 -right-20 text-6xl opacity-20"
         >
-          🎨
+          
         </motion.div>
         
         <motion.div
@@ -88,7 +88,7 @@ export default function NotFound() {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute -bottom-20 -left-20 text-6xl opacity-20"
         >
-          💡
+          
         </motion.div>
       </div>
     </div>

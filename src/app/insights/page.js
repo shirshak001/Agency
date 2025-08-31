@@ -325,7 +325,7 @@ const InsightsPage = () => {
                     </div>
                     
                     <Link
-                      href={`/insights/${insight.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                      href={`/insights/${insight.id}`}
                       className="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors"
                     >
                       Read More →
