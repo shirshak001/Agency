@@ -16,45 +16,59 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "No.1 Website Development Company| 3Bit Studio - Premium Web Development & Digital Solutions",
-    template: "%s | 3Bit Studio - Leading Digital Agency"
+    default: "App Development Agency | IT Solutions Company | 3Bit Studio - No.1 Digital Transformation Partner",
+    template: "%s | 3Bit Studio - Leading App Development Agency & IT Solutions"
   },
   description:
-    " No.1 Website Development Company in India ⭐ 3Bit Studio delivers premium web development, mobile apps, UI/UX design & AI automation. 500+ Projects ✅ 24/7 Support ✅ Starting ₹9,999 ✅ Get Free Quote Today!",
+    "🏆 Top App Development Agency & IT Solutions Company in India ⭐ 3Bit Studio: Mobile App Development, Custom Software, AI Solutions, Cloud Services. 500+ Projects ✅ Fortune 500 Clients ✅ 24/7 Support ✅ Free Consultation!",
   keywords: [
+    // Primary target keywords
+    "app development agency",
+    "IT solutions",
+    "app development agency India",
+    "IT solutions company",
+    "mobile app development agency",
+    "custom software development company",
+    "digital transformation agency",
+    "enterprise IT solutions",
+    "business app development",
+    
+    // Secondary keywords
     "No 1 website development company",
-    "best web development company India",
-    "top website development agency",
-    "premium web development services",
-    "custom website development",
-    "professional web design company",
+    "best app development company India",
+    "top IT solutions provider",
+    "premium mobile app development",
+    "custom app development services",
+    "professional software development",
     "3Bit Studio",
-    "website development company near me",
-    "affordable web development",
-    "React development company",
-    "Next.js development services",
-    "mobile app development company",
+    "app development company near me",
+    "affordable app development",
+    "React Native development company",
+    "Flutter app development services",
+    "iOS app development agency",
+    "Android app development company",
+    "cross-platform app development",
     "UI UX design agency",
-    "digital transformation company",
     "web development agency India",
-    "custom software development",
-    "e-commerce development company",
-    "responsive web design",
-    "SEO friendly websites",
-    "business website development",
-    "startup web development",
-    "enterprise web solutions",
-    "web application development",
-    "full stack development company",
-    "digital marketing agency",
-    "branding and web design",
-    "website redesign services",
-    "WordPress development",
-    "React Native app development",
-    "AI automation services",
-    "cloud hosting solutions",
-    "website maintenance support",
-    "24/7 technical support"
+    "e-commerce app development",
+    "fintech app development",
+    "healthcare app solutions",
+    "AI powered applications",
+    "machine learning solutions",
+    "blockchain development",
+    "cloud migration services",
+    "DevOps consulting",
+    "API development services",
+    "microservices architecture",
+    "startup app development",
+    "enterprise app solutions",
+    "scalable IT infrastructure",
+    "digital marketing solutions",
+    "IT consulting services",
+    "technology partnerships",
+    "agile development methodology",
+    "24/7 technical support",
+    "app maintenance services"
   ],
   authors: [{ name: "3Bit Studio", url: "https://www.3bitstudio.com" }],
   creator: "3Bit Studio",
@@ -106,22 +120,22 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.3bitstudio.com",
-    siteName: "3Bit Studio - No.1 Website Development Company",
-    title: "No.1 Website Development Company | 3Bit Studio - Premium Web Development & Digital Solutions",
-    description: " Website Devel🏆 No.1opment Company in India ⭐ 3Bit Studio delivers premium web development, mobile apps, UI/UX design & AI automation. 500+ Projects ✅ 24/7 Support ✅ Starting ₹9,999 ✅ Get Free Quote Today!",
+    siteName: "3Bit Studio - App Development Agency & IT Solutions Company",
+    title: "App Development Agency | IT Solutions Company | 3Bit Studio - No.1 Digital Transformation Partner",
+    description: "🏆 Top App Development Agency & IT Solutions Company in India ⭐ 3Bit Studio: Mobile App Development, Custom Software, AI Solutions, Cloud Services. 500+ Projects ✅ Fortune 500 Clients ✅ 24/7 Support",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "3Bit Studio - No.1 Website Development Company in India",
+        alt: "3Bit Studio - Leading App Development Agency & IT Solutions Company",
         type: "image/jpeg",
       },
       {
         url: "/og-image-square.jpg",
         width: 1200,
         height: 1200,
-        alt: "3Bit Studio - Premium Digital Solutions",
+        alt: "3Bit Studio - Premium IT Solutions & App Development",
         type: "image/jpeg",
       },
     ],
@@ -130,8 +144,8 @@ export const metadata = {
     card: "summary_large_image",
     site: "@3bitstudio",
     creator: "@3bitstudio",
-    title: "No.1 Website Development Company | 3Bit Studio - Premium Web Development & Digital Solutions",
-    description: "🏆 No.1 Website Development Company in India ⭐ 3Bit Studio delivers premium web development, mobile apps, UI/UX design & AI automation. 500+ Projects ✅ 24/7 Support ✅ Starting ₹9,999",
+    title: "App Development Agency | IT Solutions Company | 3Bit Studio - No.1 Digital Transformation Partner",
+    description: "🏆 Top App Development Agency & IT Solutions Company in India ⭐ Mobile App Development, Custom Software, AI Solutions, Cloud Services. 500+ Projects ✅ Fortune 500 Clients",
     images: ["/og-image.jpg"],
   },
   verification: {
@@ -164,145 +178,6 @@ export default function RootLayout({ children }) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://www.3bitstudio.com/#organization",
-                  "name": "3Bit Studio",
-                  "alternateName": ["3BitStudio", "No.1 Website Development Company"],
-                  "url": "https://www.3bitstudio.com",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "@id": "https://www.3bitstudio.com/#logo",
-                    "url": "https://www.3bitstudio.com/favicon.svg",
-                    "width": 512,
-                    "height": 512,
-                    "caption": "3Bit Studio Logo"
-                  },
-                  "image": {
-                    "@id": "https://www.3bitstudio.com/#logo"
-                  },
-                  "description": "No.1 Website Development Company in India providing premium web development, mobile app development, UI/UX design, and AI automation services. 500+ Projects completed with 24/7 support.",
-                  "founder": {
-                    "@type": "Person",
-                    "name": "3Bit Studio Founders"
-                  },
-                  "foundingDate": "2020",
-                  "slogan": "No.1 Website Development Company - Digital Innovation That Drives Results",
-                  "contactPoint": [
-                    {
-                      "@type": "ContactPoint",
-                      "telephone": "+91-8791167321",
-                      "contactType": "customer service",
-                      "availableLanguage": ["English", "Hindi"],
-                      "areaServed": "IN",
-                      "hoursAvailable": {
-                        "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": [
-                          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-                        ],
-                        "opens": "09:00",
-                        "closes": "18:00"
-                      }
-                    },
-                    {
-                      "@type": "ContactPoint",
-                      "email": "3threebitstudio@gmail.com",
-                      "contactType": "customer support",
-                      "availableLanguage": ["English", "Hindi"]
-                    }
-                  ],
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": "IN",
-                    "addressRegion": "India"
-                  },
-                  "sameAs": [
-                    "https://www.linkedin.com/company/3bitstudio",
-                    "https://twitter.com/3bitstudio",
-                    "https://www.facebook.com/3bitstudio",
-                    "https://www.instagram.com/3bitstudio"
-                  ],
-                  "knowsAbout": [
-                    "Website Development",
-                    "Mobile App Development", 
-                    "UI/UX Design",
-                    "Branding",
-                    "AI Automation",
-                    "Digital Marketing",
-                    "E-commerce Development",
-                    "React Development",
-                    "Next.js Development",
-                    "WordPress Development",
-                    "SEO Optimization",
-                    "Custom Software Development"
-                  ],
-                  "areaServed": {
-                    "@type": "Country",
-                    "name": "India"
-                  },
-                  "serviceType": "Website Development Company",
-                  "award": [
-                    "No.1 Website Development Company in India",
-                    "Top Digital Agency 2024",
-                    "Best Web Development Services",
-                    "500+ Projects Completed"
-                  ],
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "reviewCount": "150",
-                    "bestRating": "5",
-                    "worstRating": "1"
-                  }
-                },
-                {
-                  "@type": "WebSite", 
-                  "@id": "https://www.3bitstudio.com/#website",
-                  "url": "https://www.3bitstudio.com",
-                  "name": "3Bit Studio - No.1 Website Development Company",
-                  "description": "No.1 Website Development Company in India providing premium web development, mobile app development, UI/UX design, and AI automation services.",
-                  "publisher": {
-                    "@id": "https://www.3bitstudio.com/#organization"
-                  },
-                  "potentialAction": [
-                    {
-                      "@type": "SearchAction",
-                      "target": {
-                        "@type": "EntryPoint",
-                        "urlTemplate": "https://www.3bitstudio.com/?s={search_term_string}"
-                      },
-                      "query-input": "required name=search_term_string"
-                    }
-                  ],
-                  "inLanguage": "en-US"
-                },
-                {
-                  "@type": "LocalBusiness",
-                  "@id": "https://www.3bitstudio.com/#localbusiness", 
-                  "name": "3Bit Studio - Website Development Company",
-                  "image": "https://www.3bitstudio.com/favicon.svg",
-                  "telephone": "+91-8791167321",
-                  "email": "3threebitstudio@gmail.com",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": "IN",
-                    "addressRegion": "India"
-                  },
-                  "url": "https://www.3bitstudio.com",
-                  "priceRange": "₹9,999 - ₹99,999",
-                  "currenciesAccepted": "INR, USD",
-                  "paymentAccepted": "Credit Card, Debit Card, UPI, Bank Transfer"
-                }
-              ]
-            })
-          }}
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

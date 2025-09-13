@@ -73,7 +73,7 @@ const HeroSimple = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <span className="text-secondary block text-2xl md:text-3xl lg:text-4xl mb-2"></span>
-            3bit <span className="text-gradient-studio">Studio</span>
+            3Bit <span className="text-gradient-studio">Studio</span>
           </motion.h1>
           
           <motion.p 

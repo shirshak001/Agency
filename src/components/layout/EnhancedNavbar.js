@@ -75,7 +75,7 @@ const EnhancedNavbar = () => {
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-white">
-          3bit <span className="text-secondary">Studio</span>
+          3Bit <span className="text-secondary">Studio</span>
         </Link>
 
         {/* Desktop Nav */}

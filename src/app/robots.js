@@ -5,12 +5,18 @@ export default function robots() {
         userAgent: '*',
         allow: [
           '/',
+          '/services/',
+          '/services/*',
+          '/services/mobile-app-development',
+          '/services/it-solutions',
           '/contact',
           '/pricing',
           '/faq',
           '/terms',
           '/blog',
-          '/blog/*'
+          '/blog/*',
+          '/insights',
+          '/insights/*'
         ],
         disallow: [
           '/api/',

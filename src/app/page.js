@@ -32,7 +32,7 @@ const SimpleFooter = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <Link href="/" className="text-2xl font-bold text-white mb-4 block">
-              3bit<span className="text-secondary">Studio</span>
+              3Bit<span className="text-secondary">Studio</span>
             </Link>
             <p className="text-gray-400 mb-4 max-w-md">
               We create exceptional digital experiences that help businesses
