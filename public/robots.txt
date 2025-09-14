@@ -1,14 +1,72 @@
+# 3Bit Studio - App Development Agency & IT Solutions Company
+# https://www.3bitstudio.com
+
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://www.3bitstudio.com/sitemap.xml
+# Allow all major search engine bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
 
-# Allow search engines to crawl all pages
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Allow specific pages for better indexing
 Allow: /
 Allow: /contact
 Allow: /pricing
 Allow: /faq
 Allow: /blog
-Allow: /insights
 Allow: /blog/*
+Allow: /insights
+Allow: /insights/*
+Allow: /services
+Allow: /services/*
+Allow: /terms
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /_next
+Disallow: /api
+Disallow: *.json$
+Disallow: /private
+
+# Sitemap locations
+Sitemap: https://www.3bitstudio.com/sitemap.xml
+Sitemap: https://www.3bitstudio.com/sitemap-0.xml
+
+# Host directive (helps with canonical domain)
+Host: https://www.3bitstudio.com

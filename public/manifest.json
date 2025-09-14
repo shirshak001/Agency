@@ -1,13 +1,56 @@
 {
-  "name": "3Bit Studio - Premier Digital Agency",
+  "name": "3Bit Studio - #1 App Development Agency & IT Solutions Company India",
   "short_name": "3Bit Studio",
-  "description": "Premier digital agency specializing in web development, mobile apps, UI/UX design, branding, and AI automation",
+  "description": "#1 App Development Agency & IT Solutions Company in India. Mobile App Development, Custom Software, Digital Transformation, AI Solutions, Cloud Services. 1000+ Projects, Fortune 500 Clients, 24/7 Support.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0F0F23",
   "theme_color": "#8B5CF6",
   "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "technology", "developer", "utilities"],
+  "keywords": [
+    "app development",
+    "mobile app development",
+    "IT solutions",
+    "software development",
+    "digital transformation",
+    "3Bit Studio",
+    "app developers",
+    "technology services"
+  ],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "3Bit Studio Desktop View"
+    },
+    {
+      "src": "/screenshot-mobile.jpg", 
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "platform": "narrow",
+      "label": "3Bit Studio Mobile View"
+    }
+  ],
   "icons": [
+    {
+      "src": "/3bit-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/3bit-logo.png",
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/favicon.svg",
       "sizes": "any",
@@ -24,10 +67,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "categories": ["business", "productivity", "utilities"],
-  "lang": "en-US",
-  "dir": "ltr",
-  "scope": "/",
-  "id": "3bitstudio"
+  ]
 }
