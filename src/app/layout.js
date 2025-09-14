@@ -21,7 +21,7 @@ export const metadata = {
     template: "%s | 3Bit Studio - Leading App Development Agency & IT Solutions Provider"
   },
   description:
-    "🏆 #1 App Development Agency in India | 3Bit Studio ⭐ Expert Mobile App Development (iOS, Android, React Native, Flutter), Custom Software Development, IT Solutions & Digital Transformation. 1000+ Projects Delivered ✅ Fortune 500 Clients ✅ 24/7 Support ✅ Free Consultation & Quote! Transform your business with cutting-edge technology solutions.",
+    "🏆 #1 App Development Agency & IT Solutions Company in India ⭐ 3Bit Studio: Mobile App Development, Custom Software, AI Solutions, Cloud Services, Digital Transformation. 1000+ Projects ✅ Fortune 500 Clients ✅ 24/7 Support ✅ Free Consultation! Get Quote Now!",
   keywords: [
     // High-volume primary keywords
     "app development agency",
@@ -142,12 +142,11 @@ export const metadata = {
   },
   metadataBase: new URL("https://www.3bitstudio.com"),
   alternates: {
-    canonical: "https://www.3bitstudio.com/",
+    canonical: "/",
     languages: {
-      'en-US': 'https://www.3bitstudio.com/en-us',
-      'en-IN': 'https://www.3bitstudio.com/en-in',
-      'hi-IN': 'https://www.3bitstudio.com/hi-in',
-      'x-default': 'https://www.3bitstudio.com/'
+      'en-US': '/en-us',
+      'en-IN': '/en-in',
+      'hi-IN': '/hi-in'
     }
   },
   robots: {
@@ -299,6 +298,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#8B5CF6" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

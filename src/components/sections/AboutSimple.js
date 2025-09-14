@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Icon from '../ui/Icon';
-import Link from 'next/link';
 
 const AboutSimple = () => {
   const [isClient, setIsClient] = useState(false);
@@ -32,30 +31,19 @@ const AboutSimple = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
               About <span className="text-gradient">3Bit Studio</span>
             </h2>
 
-            <h3 className="text-xl md:text-2xl font-semibold text-blue-400 mb-4">
-              Leading App Development Agency & IT Solutions Provider
-            </h3>
-
             <p className="text-lg text-gray-300 mb-6 leading-relaxed text-center lg:text-left">
-              We are a passionate team of <strong>expert mobile app developers</strong>, designers, and strategists who specialize in 
-              <Link href="/services/mobile-app-development" className="text-blue-400 hover:underline"> mobile app development</Link>, 
-              <Link href="/services/custom-software-development" className="text-purple-400 hover:underline"> custom software development</Link>, and 
-              <Link href="/services/it-solutions" className="text-green-400 hover:underline"> enterprise IT solutions</Link>. 
-              Since our founding in 2019, we&apos;ve been dedicated to helping <strong>startups</strong> and <strong>Fortune 500 companies</strong> 
-              transform their digital presence with cutting-edge technology.
+              We are a passionate team of designers, developers, and strategists who believe
+              in the power of exceptional digital experiences. Since our founding, we&apos;ve been
+              dedicated to helping businesses transform their online presence.
             </p>
 
             <p className="text-lg text-gray-300 mb-8 leading-relaxed text-center lg:text-left">
-              Our proven approach combines <strong>creative innovation</strong> with <strong>technical expertise</strong> in 
-              <Link href="/services/ios-app-development" className="text-blue-400 hover:underline"> iOS development</Link>, 
-              <Link href="/services/android-app-development" className="text-green-400 hover:underline"> Android development</Link>, 
-              <Link href="/services/react-native-development" className="text-cyan-400 hover:underline"> React Native</Link>, and 
-              <Link href="/services/flutter-development" className="text-purple-400 hover:underline"> Flutter</Link> to deliver 
-              solutions that not only look stunning but also drive <strong>real business results</strong> and <strong>ROI growth</strong>.
+              Our approach combines creative innovation with technical expertise to deliver
+              solutions that not only look stunning but also drive real business results.
             </p>
 
             {/* Key Points */}

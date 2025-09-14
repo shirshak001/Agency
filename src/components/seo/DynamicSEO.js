@@ -233,10 +233,8 @@ export function generateLocationSEO(location) {
   };
 }
 
-const DynamicSEO = {
+export default {
   generateServiceSEO,
   generateBlogSEO,
   generateLocationSEO
 };
-
-export default DynamicSEO;

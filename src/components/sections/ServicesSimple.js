@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Icon from '../ui/Icon';
 import StarBorder from '../ui/StarBorder';
-import Link from 'next/link';
 
 const ServicesSimple = () => {
   const [isClient, setIsClient] = useState(false);
@@ -20,11 +19,10 @@ const ServicesSimple = () => {
   const services = [
     {
       id: 1,
-      title: "Mobile App Development",
-      description: "Expert iOS, Android, React Native & Flutter app development services for startups and enterprises.",
+      title: "UI/UX Design",
+      description: "Creating intuitive and beautiful user experiences that convert visitors into customers.",
       icon: "/1.png",
-      color: "bg-gradient-purple-blue",
-      link: "/services/mobile-app-development"
+      color: "bg-gradient-purple-blue"
     },
     {
       id: 2,
@@ -73,18 +71,11 @@ const ServicesSimple = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Our Professional <span className="text-gradient">Services</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Our <span className="text-gradient">Services</span>
           </h2>
-          <h3 className="text-xl md:text-2xl font-semibold text-blue-400 mb-4">
-            Comprehensive Mobile App Development & IT Solutions
-          </h3>
-          <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            We provide comprehensive <Link href="/services" className="text-blue-400 hover:underline">digital solutions</Link> including 
-            <strong> mobile app development</strong>, <strong>custom software development</strong>, 
-            <strong> IT consulting</strong>, and <strong>digital transformation services</strong> to help your business 
-            thrive in the modern digital landscape. Our expert team delivers <strong>scalable</strong>, <strong>secure</strong>, 
-            and <strong>cost-effective solutions</strong> tailored to your specific business needs.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            We provide comprehensive digital solutions to help your business thrive in the modern world.
           </p>
         </motion.div>
 
@@ -99,8 +90,7 @@ const ServicesSimple = () => {
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <Link href={service.link || "/services"} className="block h-full">
-                <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 hover:border-accent-1 transition-all duration-300 h-full relative overflow-hidden cursor-pointer">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 hover:border-accent-1 transition-all duration-300 h-full relative overflow-hidden">
                 {/* Icon */}
                 <div className='mb-4 flex lg:flex-col gap-1 justify-center items-center'> 
                   <div className="text-2xl lg:text-4xl lg:mb-6 text-center">
@@ -138,7 +128,6 @@ const ServicesSimple = () => {
                   }}
                 /> */}
               </div>
-              </Link>
             </motion.div>
           ))}
         </div>
