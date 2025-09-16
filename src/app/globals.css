@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Always use dark mode colors regardless of system theme */
+  --background: #0f172a;       /* Dark navy (previously --dark) */
+  --foreground: #f8fafc;       /* Light color (previously --light) */
   
   /* Modern Gradient Color Palette */
   --primary: #0f172a;          /* Deep navy */
@@ -16,7 +17,7 @@
   --gradient-hero: linear-gradient(135deg, #0f172a 0%, #3b82f6 50%, #8b5cf6 100%);
   --light: #f8fafc;
   --dark: #0f172a;
-  --text: #1e293b;
+  --text: #F5F5F5;            /* Light text for dark background */
 }
 
 @theme inline {
@@ -26,13 +27,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* We don't need this media query anymore as we want to force dark mode
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--dark);
     --foreground: var(--light);
     --text: #F5F5F5;
   }
-}
+}*/
 
 @layer base {
   body {
